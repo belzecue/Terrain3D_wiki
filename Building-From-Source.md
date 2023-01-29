@@ -39,7 +39,10 @@ This number is important for the next section.
 
 ## 3. Identify the appropriate godot-cpp version
 
-At this time your version of godot-cpp must match the version of your Godot engine exactly. Look at the [godot-cpp commit history](https://github.com/godotengine/godot-cpp/commits/master
+At this time your version of godot-cpp must match the version of your Godot engine exactly. Use one of these steps to get the correct commit hash.
+
+### Using the website
+Look at the [godot-cpp commit history](https://github.com/godotengine/godot-cpp/commits/master
 ) for your version. Search for entries named `Sync with upstream commit...`.
 
 
@@ -48,12 +51,29 @@ Currently, the most recent one is Godot 4 Beta 14.
 
 Clicking the `...` on the right expands the description which shows `beta14`. This is the correct commit. You can click the two overlapping squares on the right to copy the commit hash (`1909113`).
 
+
+### Using the command line
+Alternatively you can use git to search on the command line. This will search the server (origin) for all commit messages with `beta` allowing you to find the commits. Make sure to grab the top commit message (a8d8..), not the upstream commit, which is from the Godot repository.
+```
+GDExtensionTerrain/godot-cpp$ git log origin -Gbeta
+commit a8d848506074b1bb7eae319b06e9de60395eee1f
+Author: Rémi Verschelde <rverschelde@gmail.com>
+Date:   Fri Jan 27 17:02:22 2023 +0100
+
+    gdextension: Sync with upstream commit 518b9e5801a19229805fe837d7d0cf92920ad413 (4.0-beta16)
+[truncated]
+```
+
+### Recent commits
 Here are some godot-cpp commits for recent releases of Godot 4:
+* Beta 16 `a8d848506074b1bb7eae319b06e9de60395eee1f`
+* Beta 15 `ae1afba8d126e2b577ba358f17b2843787f71ef1`
 * Beta 14 `19091138895d35e1ce69742889b8bfd82be57f17`
 * Beta 13 `cb15429e4a2cf0682acd626e7ecf703c2a159460`
 * Beta 12 `151ea35c5fbb0254e0d3d29e230270b60852915f`
 
-Git is smart enough to determine the hash you want with only the first 6-8 or so characters in a hash string. So `1909113` matches beta 14 above.
+### Check out the right version
+Once you have the commit string, you just need to check it out. Git is smart enough to determine the hash you want with only the first 6-8 or so characters in a hash string. So `1909113` matches beta 14 above.
 
 If the version checked out in step 3 above is not the version you want, then go back to the command line and change it. This will change it to Beta 12 for instance:
 
@@ -74,7 +94,7 @@ GDExtensionTerrain/godot-cpp$ cd ..
 GDExtensionTerrain$ scons
 ```
 
-Upon success you should see something like this:
+Upon success you should see something like this at the end:
 
 ```
 Creating library project\addons\terrain\bin\libterrain.windows.debug.x86_64.lib and object project\addons\terrain\bin\libterrain.windows.debug.x86_64.exp
@@ -96,7 +116,7 @@ scons: done building targets.
 ### When running scons, I get these errors:
 
 ```
-$ scons
+GDExtensionTerrain$ scons
 scons: Reading SConscript files ...
 
 scons: warning: Calling missing SConscript without error is deprecated.
