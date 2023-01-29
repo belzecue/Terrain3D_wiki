@@ -105,10 +105,9 @@ scons: done building targets.
 
 ## 5. Set up the extension in Godot
 
-* Copy the files in `project/addons/terrain` to your own project folder under `/addons/terrain`. You may need to restart Godot, though it will likely hot load it.
-
-* Create or open a scene. Add a new node and search for Terrain3D.
-
+* Close Godot. (Not required the first time, but required when updating the files.)
+* Copy the files in `project/addons/terrain` to your own project folder under `/addons/terrain`. 
+* Open Godot and create or open a scene. Add a new node and search for Terrain3D.
 
 
 ## Troubleshooting
