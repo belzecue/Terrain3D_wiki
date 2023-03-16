@@ -30,10 +30,10 @@ Submodule 'godot-cpp' (https://github.com/godotengine/godot-cpp.git) registered 
 
 GDExtensionTerrain$ git submodule update
 Cloning into 'C:/GD/_plugins/TerrainGDEX/godot-cpp'...
-Submodule path 'godot-cpp': checked out '19091138895d35e1ce69742889b8bfd82be57f17'
+Submodule path 'godot-cpp': checked out '9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f'
 
 ```
-Note the version it checked out: **1909113**...
+Note the version it checked out: **9d1c396**...
 
 This number is important for the next section.
 
@@ -46,44 +46,40 @@ Look at the [godot-cpp commit history](https://github.com/godotengine/godot-cpp/
 ) for your version. Search for entries named `Sync with upstream commit...`.
 
 
-Currently, the most recent one is Godot 4 Beta 14.
+Eg, from Godot 4 Beta 14.
+
 ![image](https://user-images.githubusercontent.com/632766/214382959-c6143e07-eb11-43ff-b654-75ed99fd033f.png)
 
-Clicking the `...` on the right expands the description which shows `beta14`. This is the correct commit. You can click the two overlapping squares on the right to copy the commit hash (`1909113`).
+Clicking the `...` on the right expands the description which shows `beta14`. This is the correct entry, and you want the commit string on the right in blue. Click the two overlapping squares on the right to copy the commit hash (`1909113`).
 
 
 ### Using the command line
-Alternatively you can use git to search on the command line. This will search the server (origin) for all commit messages with `beta` allowing you to find the commits. Make sure to grab the top commit message (a8d8..), not the upstream commit, which is from the Godot repository.
+Alternatively you can use git to search on the command line. This will search the server (origin) for all commit messages with `stable` allowing you to find the commits. Make sure to grab the top commit message (9d1c396c..), not the upstream commit shown at the bottom, which is from the Godot repository.
 ```
-GDExtensionTerrain/godot-cpp$ git log origin -Gbeta
-commit a8d848506074b1bb7eae319b06e9de60395eee1f
+GDExtensionTerrain/godot-cpp$ git log origin -Gstable
+commit 9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f (HEAD -> master, tag: godot-4.0-stable, origin/master, origin/HEAD, origin/4.0)
 Author: Rémi Verschelde <rverschelde@gmail.com>
-Date:   Fri Jan 27 17:02:22 2023 +0100
+Date:   Wed Mar 1 15:32:44 2023 +0100
 
-    gdextension: Sync with upstream commit 518b9e5801a19229805fe837d7d0cf92920ad413 (4.0-beta16)
+    gdextension: Sync with upstream commit 92bee43adba8d2401ef40e2480e53087bcb1eaf1 (4.0-stable)
+
 [truncated]
 ```
 
 ### Recent commits
 Here are some godot-cpp commits for recent releases of Godot 4:
-* Beta 16 `a8d848506074b1bb7eae319b06e9de60395eee1f`
-* Beta 15 `ae1afba8d126e2b577ba358f17b2843787f71ef1`
-* Beta 14 `19091138895d35e1ce69742889b8bfd82be57f17`
-* Beta 13 `cb15429e4a2cf0682acd626e7ecf703c2a159460`
-* Beta 12 `151ea35c5fbb0254e0d3d29e230270b60852915f`
+* 4.0 stable `9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f`
 
 ### Check out the right version
-Once you have the commit string, you just need to check it out. Git is smart enough to determine the hash you want with only the first 6-8 or so characters in a hash string. So `1909113` matches beta 14 above.
+Once you have the commit string, you just need to check it out. Git is smart enough to determine the hash you want with only the first 6-8 or so characters in a hash string. So `9d1c39` matches 4.0 stable above.
 
 If the version checked out in step 3 above is not the version you want, then go back to the command line and change it. This will change it to Beta 12 for instance:
 
 ```
 GDExtensionTerrain$ cd godot-cpp
 
-GDExtensionTerrain/godot-cpp$ git checkout 151ea35c5fbb0254e0d3d29e230270b60852915f
-Previous HEAD position was 1909113 gdextension: Sync with upstream commit 28a24639c3c6a95b5b9828f5f02bf0dc2f5ce54b (4.0-beta14)
-HEAD is now at 151ea35 gdextension: Sync with upstream commit 3c9bf4bc210a8e6a208f30ca59de4d4d7e18c04d (4.0-beta12)
-
+GDExtensionTerrain/godot-cpp$ git checkout 9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f
+HEAD is now at 9d1c396 gdextension: Sync with upstream commit 92bee43adba8d2401ef40e2480e53087bcb1eaf1 (4.0-stable)
 ```
 
 ## 4. Build the extension
