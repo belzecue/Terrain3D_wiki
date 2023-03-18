@@ -46,15 +46,15 @@ Look at the [godot-cpp commit history](https://github.com/godotengine/godot-cpp/
 ) for your version. Search for entries named `Sync with upstream commit...`.
 
 
-Eg, from Godot 4 Beta 14.
+Eg, from Godot 4.0-stable.
 
-![image](https://user-images.githubusercontent.com/632766/214382959-c6143e07-eb11-43ff-b654-75ed99fd033f.png)
+![image](https://user-images.githubusercontent.com/632766/226097806-8a7d17da-7765-44a1-a142-23e291fcb2d3.png)
 
-Clicking the `...` on the right expands the description which shows `beta14`. This is the correct entry, and you want the commit string on the right in blue. Click the two overlapping squares on the right to copy the commit hash (`1909113`).
+Clicking the `...` on the right expands the description which shows `4.0-stable`. This is the correct entry, and you want the commit string on the right in blue. Click the two overlapping squares on the right to copy the commit hash (`9d1c396`).
 
 
 ### Using the command line
-Alternatively you can use git to search on the command line. This will search the server (origin) for all commit messages with `stable` allowing you to find the commits. Make sure to grab the top commit message (9d1c396c..), not the upstream commit shown at the bottom, which is from the Godot repository.
+Alternatively you can use git to search on the command line. This will search the server (origin) for all commit messages with `stable` allowing you to find the commits. Make sure to grab the top commit message (`9d1c396..`), not the upstream commit shown at the bottom, which is from the Godot repository.
 ```
 GDExtensionTerrain/godot-cpp$ git log origin -Gstable
 commit 9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f (HEAD -> master, tag: godot-4.0-stable, origin/master, origin/HEAD, origin/4.0)
@@ -71,9 +71,9 @@ Here are some godot-cpp commits for recent releases of Godot 4:
 * 4.0 stable `9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f`
 
 ### Check out the right version
-Once you have the commit string, you just need to check it out. Git is smart enough to determine the hash you want with only the first 6-8 or so characters in a hash string. So `9d1c39` matches 4.0 stable above.
+Once you have the commit string, you just need to check it out. You may use either the full hash string or just the 6-8 characters, so `9d1c396` would also match 4.0 stable.
 
-If the version checked out in step 3 above is not the version you want, then go back to the command line and change it. This will change it to Beta 12 for instance:
+If the version checked out in step 3 above is not the version you want, then go back to the command line and change it. This will change it to 4.0-stable specifically:
 
 ```
 GDExtensionTerrain$ cd godot-cpp
