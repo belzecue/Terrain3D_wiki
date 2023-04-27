@@ -39,7 +39,7 @@ This number is important for the next section.
 
 ## 3. Identify the appropriate godot-cpp version
 
-At this time, your version of godot-cpp must match the version of your Godot engine exactly. Use one of these steps to get the correct commit hash.
+Your version of godot-cpp should match the version of your Godot engine. e.g. Godot Engine 4.0.2 and godot-cpp 4.0.2. In the past this was very strict. At this time, it seems that 4.0 and 4.02 are interchangeable. Use one of these steps to find the correct commit hash.
 
 
 ### Using tags
