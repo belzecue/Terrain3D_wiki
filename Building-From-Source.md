@@ -39,12 +39,18 @@ This number is important for the next section.
 
 ## 3. Identify the appropriate godot-cpp version
 
-At this time your version of godot-cpp must match the version of your Godot engine exactly. Use one of these steps to get the correct commit hash.
+At this time, your version of godot-cpp must match the version of your Godot engine exactly. Use one of these steps to get the correct commit hash.
 
-### Using the website
-Look at the [godot-cpp commit history](https://github.com/godotengine/godot-cpp/commits/master
-) for your version. Search for entries named `Sync with upstream commit...`.
 
+### Using tags
+On the [repository page](https://github.com/godotengine/godot-cpp), click the branch selector, then `Tags` to identify available tags that match the Godot engine binary you wish to use. If your engine version is in this list, e.g. `godot-4.0.2-stable`, great, move on to step 4. Otherwise explore the commit history on the website or command line as shown below.
+
+![image](https://user-images.githubusercontent.com/632766/234943310-efa46891-00da-46c1-9200-598d6635fcc7.png)
+
+
+### Using the commit history
+If your engine version doesn't have a tag assigned, you can look at the [godot-cpp commit history](https://github.com/godotengine/godot-cpp/commits/master
+) for a commit that syncs the repository to the upstream engine version. Search for entries named `Sync with upstream commit...`.
 
 Eg, from Godot 4.0-stable.
 
@@ -66,14 +72,20 @@ Date:   Wed Mar 1 15:32:44 2023 +0100
 [truncated]
 ```
 
-### Recent commits
-Here are some godot-cpp commits for recent releases of Godot 4:
-* 4.0 stable `9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f`
+Note, for updating you may need to update your git repo:
+```
+$ git fetch
+From https://github.com/godotengine/godot-cpp
+ * [new tag]         godot-4.0.1-stable -> godot-4.0.1-stable
+ * [new tag]         godot-4.0.2-stable -> godot-4.0.2-stable
+```
+Now we can search the logs above, or use the two new tags that were found, eg, godot-4.0.2-stable.
 
-### Check out the right version
-Once you have the commit string, you just need to check it out. You may use either the full hash string or just the 6-8 characters, so `9d1c396` would also match 4.0 stable.
 
-If the version checked out in step 3 above is not the version you want, then go back to the command line and change it. This will change it to 4.0-stable specifically:
+## 4. Check out the correct version
+Once you have the proper tag or commit string, you just need to check it out. If using a commit string, you may use either the full hash or just the first 6-8 characters, so `9d1c396` would also match 4.0-stable.
+
+These examples will change the godot-cpp repository to 4.0-stable and 4.02-stable, respectively:
 
 ```
 GDExtensionTerrain$ cd godot-cpp
@@ -82,7 +94,16 @@ GDExtensionTerrain/godot-cpp$ git checkout 9d1c396c54fc3bdfcc7da4f3abcb52b14f6cc
 HEAD is now at 9d1c396 gdextension: Sync with upstream commit 92bee43adba8d2401ef40e2480e53087bcb1eaf1 (4.0-stable)
 ```
 
-## 4. Build the extension
+or
+
+```
+GDExtensionTerrain/godot-cpp$ git checkout godot-4.0.2-stable
+Previous HEAD position was 9d1c396 gdextension: Sync with upstream commit 92bee43adba8d2401ef40e2480e53087bcb1eaf1 (4.0-stable)
+HEAD is now at 7fb46e9 gdextension: Sync with upstream commit 7a0977ce2c558fe6219f0a14f8bd4d05aea8f019 (4.0.2-stable)
+
+```
+
+## 5. Build the extension
 
 ```
 GDExtensionTerrain/godot-cpp$ cd ..
@@ -99,11 +120,13 @@ scons: done building targets.
 ```
 
 
-## 5. Set up the extension in Godot
+## 6. Set up the extension in Godot
 
 * Close Godot. (Not required the first time, but required when updating the files.)
 * Copy the files in `project/addons/terrain` to your own project folder under `/addons/terrain`. 
 * Open Godot and create or open a scene. Add a new node and search for Terrain3D.
+* Make a new Terrain3DStorage resource.
+* Save the storage resource to a binary .res file (optional but recommended).
 
 
 ## Troubleshooting
