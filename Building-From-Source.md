@@ -134,7 +134,15 @@ The `scons` build system has additional useful options. These come from the GDEx
 
 #### Clean up build files
 ```
+# Linux, other Unix, Git bash on Windows
 scons --clean
+rm project/addons/terrain/bin/*
+find . -iregex '.+\.\(a\|lib\|o\|obj\|os\)' -delete
+
+# Windows
+scons --clean
+del /q project\addons\terrain\bin\*.*
+del /s /q *.a *.lib *.o *.obj *.os
 ```
 
 #### Manually specify the target platform
