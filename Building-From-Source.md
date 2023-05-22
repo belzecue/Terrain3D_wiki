@@ -128,6 +128,38 @@ scons: done building targets.
 * Make a new Terrain3DStorage resource.
 * Save the storage resource to a binary .res file (optional but recommended).
 
+## Other Build Options
+
+The `scons` build system has additional useful options. These come from the GDExtension template we are using, so some options may not be supported or work properly for this particular plugin. e.g. The platform.
+
+#### Clean up build files
+```
+scons --clean
+```
+
+#### Manually specify the target platform
+Note this plugin is being build and tested on Windows and Linux. It will eventually be tested on MacOS, but mobile/web platforms are currently unknown.
+```
+# platform: Target platform (linux|macos|windows|android|ios|javascript)
+
+scons platform=linux
+```
+
+#### Build release or debug_release templates
+```
+# target: Compilation target (editor|template_release|template_debug)
+
+scons target=template_release
+```
+
+#### See all options
+```
+scons --help
+
+and
+
+scons -H
+```
 
 ## Troubleshooting
 
