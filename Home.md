@@ -18,9 +18,10 @@ See the Table of Contents on the right.
 ## Painting Operations:
 
 ## Internal Formats
-* Height maps: `Image::FORMAT_RH`, 16-bit per pixel as a half-precision floating-point
-* Control maps: `Image::FORMAT_RGBA8`, 32-bits per pixel as four 8-bit components
-* Color maps: `Image::FORMAT_RGBA8`
+Defined in [Godot Image Formats](https://docs.godotengine.org/en/4.0/classes/class_image.html#enum-image-format)
+* Height maps: `FORMAT_RH`, 16-bit per pixel as a half-precision floating-point
+* Control maps: `FORMAT_RGBA8`, 32-bits per pixel as four 8-bit components
+* Color maps: `FORMAT_RGBA8`
 
 ## Importing Data
 
@@ -38,6 +39,11 @@ It will slice or pad odd sized images into region sized (default is 1024x1024) c
 
 ## Exporting Data
 
+We can export any map as `r16`, `exr`, `png`, `jpg`, `webp`, or native godot resource formats `tres` for text and `res` for binary (with ResourceSaver::FLAG_COMPRESS enabled).
+
+The general exporter takes the smallest rectangle that will fit around all active regions in the 16k^2 world and exports that as an image. So if you have a 1k x 1k island in the NW corner, and a 2k x 3k island in the center, with a 1k strait between them, the resulting export image will be something like 4k x 5k.
+
+We currently do not offer region by region export, but there is an API where you can retrieve any given region, then you can use Image to save it externally yourself.
 
 ## Terrain System Design
 
