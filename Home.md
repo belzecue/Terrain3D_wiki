@@ -29,7 +29,7 @@ See the readme for [Requirements](https://github.com/outobugi/GDExtensionTerrain
 For all other known issues, see [Issues](https://github.com/outobugi/GDExtensionTerrain/issues)
 
 ### Possible Future Features
-* Advanced texturing techniques - We intend to implement 3D Projection and adopt texturing techniques provided by The Witcher 3 team. (See [Terrain System Design](#terrain-system-design) below)
+* Advanced texturing techniques - eg. Paintable uv scale, slope, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [Terrain System Design](#terrain-system-design) below)
 * Vegetation - [It's on the list](https://github.com/outobugi/GDExtensionTerrain/issues/43) and non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader going, a custom particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
 * Holes - [We'll see](https://github.com/outobugi/GDExtensionTerrain/issues/60)
 * Double precision floats - [Possible](https://github.com/outobugi/GDExtensionTerrain/issues/30)
