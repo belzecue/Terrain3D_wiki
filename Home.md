@@ -9,7 +9,7 @@ See the Table of Contents on the right.
 
 ### Implemented Features
 
-* Geometric Clipmap Mesh Terrain (See terrain design below)
+* Geometric Clipmap Mesh Terrain (See [Terrain System Design](#terrain-system-design) below)
 * Up to 10 levels of detail (LODs)
 * Written in C++ as a Godot plugin, which works with official engine builds
 * Up to 16 x 16, 1024 x 1024 sized, non-contiguous regions. Add/remove regions and pay only for the memory you use.
@@ -31,10 +31,6 @@ For all other known issues, see [Issues](https://github.com/outobugi/GDExtension
 * Double precision floats - [Possible](https://github.com/outobugi/GDExtensionTerrain/issues/30)
 * Water - Out of scope. Use [WaterWays](https://github.com/Arnklit/Waterways) for rivers, or [Realistic Water Shader](https://godotengine.org/asset-library/asset/343) for lakes.
 * Object placement - [Out of scope](https://github.com/outobugi/GDExtensionTerrain/issues/47). Use [Scatter](https://github.com/HungryProton/scatter).
-
-## Sculpting Operations:
-
-## Painting Operations:
 
 
 ## Terrain System Design
