@@ -18,14 +18,15 @@ See the Table of Contents on the right.
 
 
 ### Known and Expected Issues
-* Platforms - tested on windows only
-* Navigation Server - Haven't tested it, but the terrain does provide full detail lod0 terrain so baking should work
-* Occlusion - haven't tested it. At the least you can use manual shapes
+* System Platforms - Tested on windows only
 * Physics - Terrain collision uses a HeightMap shape for each region. The demo player uses a CharacterBody and works fine.
+* Navigation Server - Haven't tested it, but the terrain does provide full detail lod0 terrain so baking should work
+* Occlusion - Haven't tested it. At the least you can use manual shapes
 
 For all other known issues, see [Issues](https://github.com/outobugi/GDExtensionTerrain/issues)
 
 ### Possible Future Features
+* Advanced texturing techniques - We intend to implement 3D Projection and adopt texturing techniques provided by The Witcher 3 team. (See [Terrain System Design](#terrain-system-design) below)
 * Vegetation - [It's on the list](https://github.com/outobugi/GDExtensionTerrain/issues/43) and non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader going, a custom particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
 * Holes - [We'll see](https://github.com/outobugi/GDExtensionTerrain/issues/60)
 * Double precision floats - [Possible](https://github.com/outobugi/GDExtensionTerrain/issues/30)
@@ -35,18 +36,13 @@ For all other known issues, see [Issues](https://github.com/outobugi/GDExtension
 
 ## Terrain System Design
 
-Some terrain systems generate mesh chunk on a grid centered around the camera, destroying old meshes as the camera moves and adding new ones.
+Some terrain systems generate grid of mesh chunks, centered around the camera. As the camera moves forward, old meshes far behind are destroyed and new meshes in front are created.
 
-Like The Witcher 3, this system uses a geometry clipmap, where the mesh is generated once, and at periodic intervals is recentered on the camera location. On every interval, the vertex heights are adjusted by the GPU, corresponding to terrain data. The data is stored in a heightmap and is wrapped so the terrain is repeated infinitely. LODs are built into the clipmap mesh so doesn't require much additional consideration.
+Like The Witcher 3, this system uses a geometry clipmap, where the mesh components are generated once, and at periodic intervals is recentered on the camera location. Terrain3D updates if the camera moves 50% the width of the size of LOD0 (`clipmap_size`, which defaults to 48 units). On each update, the vertex heights are adjusted by the GPU reading from the terrain heightmap. LODs are built into the clipmap mesh so don't require any additional consideration once put in place and heights are adjusted.
 
-Reference Material
-GPU Gems 2: Terrain Rendering Using GPU-Based Geometry Clipmaps https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-2-terrain-rendering-using-gpu-based-geometry
+### Reference Material
+* [GPU Gems 2: Terrain Rendering Using GPU-Based Geometry Clipmaps](https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-2-terrain-rendering-using-gpu-based-geometry)
 
-Geometry clipmaps: simple terrain rendering with level of detail
+* [Geometry clipmaps: simple terrain rendering with level of detail](https://mikejsavage.co.uk/blog/geometry-clipmaps.html)
 
-https://mikejsavage.co.uk/blog/geometry-clipmaps.html
-
-The Witcher 3 Clipmap Terrain and Texturing
-
-https://archive.org/details/GDC2014Gollent
-https://ubm-twvideo01.s3.amazonaws.com/o1/vault/GDC2014/Presentations/Gollent_Marcin_Landscape_Creation_and.pdf
+* GDC 2014: [The Witcher 3 Clipmap Terrain and Texturing](https://archive.org/details/GDC2014Gollent) - [Slides](https://ubm-twvideo01.s3.amazonaws.com/o1/vault/GDC2014/Presentations/Gollent_Marcin_Landscape_Creation_and.pdf)
