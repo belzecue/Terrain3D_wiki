@@ -22,6 +22,8 @@ See the readme for [Requirements](https://github.com/outobugi/GDExtensionTerrain
 
 ### Known and Expected Issues
 * System Platforms - Tested on windows only
+* Running the game in the editor - Works for our demo
+* Exported games - Untested and probably doesn't work. There may be issues with building, as our build scripts make no distinction on the build mode. And there might be issues loading textures and images see [Build w/o the editor for release templates](https://github.com/outobugi/GDExtensionTerrain/issues/76) and [Initial import errors](https://github.com/outobugi/GDExtensionTerrain/issues/20)
 * Physics - Terrain collision uses a HeightMap shape for each region. The demo player uses a CharacterBody and works fine.
 * Navigation Server - Haven't tested it, but the terrain does provide full detail lod0 terrain so baking should work
 * Occlusion - Haven't tested it. At the least you can use manual shapes
