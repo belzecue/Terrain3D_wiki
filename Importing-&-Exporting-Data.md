@@ -52,8 +52,8 @@ It will slice or pad odd sized images into region sized chunks (default is 1024x
 
 We can export any map as `r16`, `exr`, `png`, `jpg`, `webp`, or native Godot resource formats `tres` for text and `res` for binary (with `ResourceSaver::FLAG_COMPRESS` enabled).
 
-Only EXR or R16 are recommended for heightmaps. PNG is sufficient for external editing of control and color maps.
+Only EXR or R16 are recommended for heightmaps. Godot PNG only supports 8-bit per channel, so don't use it for heightmaps. It is fine for external editing of control and color maps which are RGBA. See [Terrain3DStorage](https://github.com/outobugi/GDExtensionTerrain/wiki/Terrain3DStorage#internal-data-storage).
 
 The exporter takes the smallest rectangle that will fit around all active regions in the 16k^2 world and export that as an image. So, if you have a 1k x 1k island in the NW corner, and a 2k x 3k island in the center, with a 1k strait between them, the resulting export image will be something like 4k x 5k. You'll need to specify the location (rounded to `region_size`) when reimporting to have a perfect round trip.
 
-We currently do not offer region by region export, but there is an API where you can retrieve any given region, then you can use `Image` to save it externally yourself.
+The demo tool does not offer region by region export, but there is an API where you can retrieve any given region, then you can use `Image` to save it externally yourself.
