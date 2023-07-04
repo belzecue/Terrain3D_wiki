@@ -1,6 +1,6 @@
 # Terrain3D Online Documentation
 
-Currently there's no way to get live documentation into Godot for GDExtensitons, so documentation will live here for now. Some code is also documented.
+Currently there's no way to get live documentation into Godot for GDExtensitons, so the API documentation will live here for now. Some code is also documented.
 
 See the Table of Contents on the right.
 
