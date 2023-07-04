@@ -1,5 +1,3 @@
-# Importing & Exporting Data
-
 Currently importing and exporting is possible via code or our demo. We will [make a UI](https://github.com/outobugi/GDExtensionTerrain/issues/81)  eventually. In the meantime, we have written a script that uses the Godot Inspector as a makeshift UI. You can use it to make a data file for your other scenes.
 
 ## How To Import Data
