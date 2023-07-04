@@ -1,20 +1,23 @@
 # Terrain3D Online Documentation
 
-Currently there's no way to get live documentation into Godot for GDExtensitons, so the API documentation will live here for now. Some code is also documented.
+Currently there's no way to get live documentation into Godot for GDExtensitons, so all API documentation will live here for now. 
 
-See the Table of Contents on the right.
+See the wiki Contents on the right.
 
+See the readme for [Requirements](https://github.com/outobugi/GDExtensionTerrain#requirements) - [Installation](https://github.com/outobugi/GDExtensionTerrain#installation--setup) - [Contributing](https://github.com/outobugi/GDExtensionTerrain#contributing)
 
 # Project Status
 
 ### Implemented Features
 
 * Geometric Clipmap Mesh Terrain (See [Terrain System Design](#terrain-system-design) below)
-* Up to 10 levels of detail (LODs)
 * Written in C++ as a Godot plugin, which works with official engine builds
+* Up to 10 levels of detail (LODs)
 * Up to 16 x 16, 1024 x 1024 sized, non-contiguous regions. Add/remove regions and pay only for the memory you use.
 * Sculpting: Raise, Lower, Flatten, Smooth, Grow (may be removed)
 * Painting: Color, roughness, texture
+* Undo/Redo
+* Import/Export data [See how](https://github.com/outobugi/GDExtensionTerrain/wiki/Importing-&-Exporting-Data)
 
 
 ### Known and Expected Issues
