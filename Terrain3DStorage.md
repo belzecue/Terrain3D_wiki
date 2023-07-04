@@ -46,7 +46,7 @@ This is an array of the texture sets: albedo/height, normal/roughness.
 
 ### Generated Maps
 
-The above arrays house all of the data for the system. These are saved onto disk and reloaded when the scene loads. Upon loading and every time various components are rebuilt, these arrays are processed into a series of generated arrays.
+The above arrays house all of the data for the system. These are saved onto disk and reloaded when the scene loads. Upon loading, and upon most terrain edits, these arrays are processed into a series of generated arrays, which are sent to the shader.
 
-For instance, all of the separate terrain surfaces (texture sets) are combined into a `Texture2DArray` to be sent to the GPU. All of the region heightmaps are similarly combined. 
+For instance, all of the separate terrain surfaces (texture sets) are combined into a `Texture2DArray` which is passed to the shader via a uniform. All of the region heightmaps are similarly combined. 
 
