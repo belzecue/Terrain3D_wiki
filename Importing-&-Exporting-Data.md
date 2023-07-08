@@ -16,7 +16,7 @@ Currently importing and exporting is possible via code or our demo. We will [mak
 
 5) Specify the location where in the world you want it. Y is ignored. X/Z are rounded to the nearest `region_size` (defaults to 1024). The map is placed centered on that point. So a location of (-2000, 100, 1000) will be imported centered around (-2048, 0, 1024).
 
-6) Add an offset and/or scale to adjust every pixel on the heightmap. Offset is added first, then scale. `clr.r = (clr.r + p_offset) * p_scale;`
+6) Add an offset and/or scale to adjust every pixel on the heightmap. Scale is added first, then offset. `clr.r = (clr.r * p_scale) + p_offset;`
 
 7) If you are importing an R16 heightmap, specify the min/max height range (eg. -328, 543), and image dimensions (eg 2048x2048). See [import formats](#supported-image-formats) below.
 
