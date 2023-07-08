@@ -22,6 +22,11 @@ Currently importing and exporting is possible via code or our demo. We will [mak
 
 8) Click `Run import` and wait. If you have the console open, and the Terrain `debug_level` set to `debug`, you'll see progress or errors.
 
+
+Notes:
+* You can import several times into the larger 16k x 16k world by specifying different locations.
+* Each time you import, it will overwrite the height, control and color for the section you imported. So if you specify only the heightmap and leave control/color blank, it will erase any control/color data in that region.
+
 ## How To Export Data
 
 Start with steps 1-3 above.
