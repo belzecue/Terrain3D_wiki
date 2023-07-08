@@ -27,7 +27,7 @@ See the readme for [Requirements](https://github.com/outobugi/GDExtensionTerrain
 * Physics - Terrain collision uses a HeightMap shape for each region. The demo player uses a CharacterBody and works fine.
 * Navigation Server - Haven't tested it, but the terrain does provide full lod0 collision, so baking should work.
 * Occlusion - Haven't tested it. At the least you can use manual shapes.
-* SDGFI - Haven't tested either. 
+* SDGFI - Seems to work fine.
 * Lightmap baking - There is no UV2 to bake lightmaps onto, so that's out.
 
 For all other known issues, see [Issues](https://github.com/outobugi/GDExtensionTerrain/issues)
