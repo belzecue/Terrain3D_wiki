@@ -13,20 +13,22 @@ See the readme for [Requirements](https://github.com/outobugi/GDExtensionTerrain
 * Geometric Clipmap Mesh Terrain (See [Terrain System Design](#terrain-system-design) below)
 * Written in C++ as a Godot plugin, which works with official engine builds
 * Up to 10 levels of detail (LODs)
-* Up to 16 x 16, 1024 x 1024 sized, non-contiguous regions. Add/remove regions and pay only for the memory you use.
-* Sculpting: Raise, Lower, Flatten, Smooth, Grow (may be removed)
-* Painting: Color, roughness, texture
+* Up to 16 x 16, 1024 x 1024 sized, non-contiguous regions. Add/remove regions and pay only for the VRAM you use
+* Sculpting: Raise, Lower, Flatten, Expand (Multiply away from 0), Reduce (Divide towards 0), Smooth
+* Painting: Texture, Color, Wetness (roughness)
 * Undo/Redo
-* Import/Export data [See how](https://github.com/outobugi/GDExtensionTerrain/wiki/Importing-&-Exporting-Data)
+* Import/Export data, [See how](https://github.com/outobugi/GDExtensionTerrain/wiki/Importing-&-Exporting-Data)
 
 
-### Known and Expected Issues
+### Status With Other Modules
 * System Platforms - Tested on windows only
 * Running the game in the editor - Works for our demo
 * Exported games - Untested and probably doesn't work. There may be issues with building, as our build scripts make no distinction on the build mode. And there might be issues loading textures and images see [Build w/o the editor for release templates](https://github.com/outobugi/GDExtensionTerrain/issues/76) and [Initial import errors](https://github.com/outobugi/GDExtensionTerrain/issues/20)
 * Physics - Terrain collision uses a HeightMap shape for each region. The demo player uses a CharacterBody and works fine.
-* Navigation Server - Haven't tested it, but the terrain does provide full detail lod0 terrain so baking should work
-* Occlusion - Haven't tested it. At the least you can use manual shapes
+* Navigation Server - Haven't tested it, but the terrain does provide full lod0 collision, so baking should work.
+* Occlusion - Haven't tested it. At the least you can use manual shapes.
+* SDGFI - Haven't tested either. 
+* Lightmap baking - There is no UV2 to bake lightmaps onto, so that's out.
 
 For all other known issues, see [Issues](https://github.com/outobugi/GDExtensionTerrain/issues)
 
