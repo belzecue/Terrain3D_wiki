@@ -12,8 +12,8 @@ The project is an Alpha. It is pretty solid now, and mostly just missing advance
 
 ### Implemented Features
 
-* Geometric Clipmap Mesh Terrain (See [Terrain System Design](../System-Design))
-* Written in C++ as a Godot plugin, which works with official engine builds
+* Geometric Clipmap Mesh Terrain (See [System Design](../System-Design))
+* Written in C++ as a Godot plugin. Works with official engine builds
 * Up to 10 levels of detail (LODs)
 * Up to 16 x 16, 1024 x 1024 sized, non-contiguous regions. Add/remove regions and pay only for the VRAM you use
 * Up to 32 textures
@@ -44,10 +44,10 @@ For all other known issues, see [Issues](https://github.com/outobugi/Terrain3D/i
 
 See our [roadmap](https://github.com/users/outobugi/projects/1/views/1) for details.
 
-* Advanced texturing techniques - eg. Paintable uv scale, slope, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [Terrain System Design](#terrain-system-design) below)
-* Vegetation - [It's on the list](https://github.com/outobugi/Terrain3D/issues/43) and non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader going, a custom particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
+* Advanced texturing techniques - eg. Paintable uv scale, slope, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [System Design](../System-Design))
+* Foliage - [It's on the list](https://github.com/outobugi/Terrain3D/issues/43). Non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader working, your own particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
+* Object placement - [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). Use [Scatter](https://github.com/HungryProton/scatter).
 * Holes - [We'll see](https://github.com/outobugi/Terrain3D/issues/60)
 * Double precision floats - [Possible](https://github.com/outobugi/Terrain3D/issues/30)
 * Water - Out of scope. Use [WaterWays](https://github.com/Arnklit/Waterways) for rivers, or [Realistic Water Shader](https://godotengine.org/asset-library/asset/343) for lakes.
-* Object placement - [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). Use [Scatter](https://github.com/HungryProton/scatter).
 
