@@ -12,7 +12,7 @@ The project is an Alpha. It is pretty solid now, and mostly just missing advance
 
 ### Implemented Features
 
-* Geometric Clipmap Mesh Terrain (See [System Design](../System-Design))
+* Geometric Clipmap Mesh Terrain (See [System Design](System-Design))
 * Written in C++ as a Godot plugin. Works with official engine builds
 * Up to 10 levels of detail (LODs)
 * Up to 16 x 16, 1024 x 1024 sized, non-contiguous regions. Add/remove regions and pay only for the VRAM you use
