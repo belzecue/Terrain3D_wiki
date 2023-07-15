@@ -21,7 +21,7 @@ The project is an Alpha. It is pretty solid now, and mostly just missing advance
 * Sculpting: Raise, Lower, Flatten, Expand (Multiply away from 0), Reduce (Divide towards 0), Smooth ([bug](https://github.com/outobugi/Terrain3D/issues/112))
 * Painting: Texture, Color, Wetness (roughness)
 * Undo/Redo
-* [Import/Export data](../Importing-&-Exporting-Data)
+* [Import/Export data](Importing-&-Exporting-Data)
 
 
 ### Interaction With Godot Modules
@@ -35,7 +35,7 @@ The project is an Alpha. It is pretty solid now, and mostly just missing advance
 * **Lightmap baking** - There is no UV2 to bake lightmaps onto, so that's out.
 
 ### Interaction with 3rd Party Tools
-* Heightmaps from Unity, WorldMachine, Unreal and other tools, see [Importing data](../Importing-&-Exporting-Data)
+* Heightmaps from Unity, WorldMachine, Unreal and other tools, see [Importing data](Importing-&-Exporting-Data)
 * **Hungry Proton's [Scatter](https://github.com/HungryProton/scatter)** - we provide an a script you can use to place objects on the terrain
 
 For all other known issues, see [Issues](https://github.com/outobugi/Terrain3D/issues)
@@ -44,7 +44,7 @@ For all other known issues, see [Issues](https://github.com/outobugi/Terrain3D/i
 
 See our [roadmap](https://github.com/users/outobugi/projects/1/views/1) for details.
 
-* Advanced texturing techniques - eg. Paintable uv scale, slope, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [System Design](../System-Design))
+* Advanced texturing techniques - eg. Paintable uv scale, slope, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [System Design](System-Design))
 * Foliage - [It's on the list](https://github.com/outobugi/Terrain3D/issues/43). Non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader working, your own particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
 * Object placement - [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). Use [Scatter](https://github.com/HungryProton/scatter).
 * Holes - [We'll see](https://github.com/outobugi/Terrain3D/issues/60)
