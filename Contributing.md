@@ -26,6 +26,7 @@ In addition:
 * Private variables/functions prefaced with `_`
 * Private/public/protected explicit and grouped together
 * Functions in h and cpp files in same order
+* One line setters/getters can go in the header file
 * All code passed through clang-format. See below.
 
 ### clang-format
