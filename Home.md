@@ -4,6 +4,8 @@ All API documentation lives in this wiki for now, as there currently is no way t
 
 See the readme for [Requirements](https://github.com/outobugi/Terrain3D#requirements) and [Installation](https://github.com/outobugi/Terrain3D#installation--setup).
 
+The main branch is currently compatible with 4.1. We have [tagged 4.0.3](https://github.com/outobugi/Terrain3D/releases/tag/v0.8-alpha_gd4.0.3), but are not maintaining a branch. As we continue to expand the code, if you wish to try and build it against 4.0, you can try by undoing [these changes](https://github.com/outobugi/Terrain3D/commit/da455147d18674d02ba4b88bd575b58de472c617).
+
 # Project Status
 
 The project is in Alpha. It is pretty solid now, and mostly just missing advanced features. We are starting to experiment with it in our games. Below are specific details.
