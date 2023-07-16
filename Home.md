@@ -2,7 +2,7 @@
 
 All API documentation lives in this wiki for now, as there currently is no way to get documentation into the live help inside of Godot for GDExtensions.
 
-See the readme for [Requirements](https://github.com/outobugi/Terrain3D#requirements) - [Installation](https://github.com/outobugi/Terrain3D#installation--setup)
+See the readme for [Requirements](https://github.com/outobugi/Terrain3D#requirements) and [Installation](https://github.com/outobugi/Terrain3D#installation--setup).
 
 # Project Status
 
