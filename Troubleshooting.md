@@ -15,4 +15,7 @@ To see collision in game, enable `Terrain3D.debug_show_collision`, and in the ed
 
 ## Common Issues
 
-TBD
+#### When I import textures it reports `Albedo/Normal textures do not have same size!` and the terrain turns white
+
+This means some textures you have already set up are different sizes than the new texture you're setting up. Eg. Textures 1-4 are 2k and you are inserting a new texture using 1k or 4k files. Make sure all textures are the same size.
+
