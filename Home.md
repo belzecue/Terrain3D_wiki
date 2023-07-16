@@ -18,10 +18,10 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 * Written in C++ as a Godot plugin. Works with official engine builds
 * Up to 10 levels of detail (LODs)
 * Up to 16 x 16, 1024 x 1024 sized, non-contiguous regions. Add/remove regions and pay only for the VRAM you use
-* Up to 32 textures
+* Up to 32 textures using albedo, normal, roughness, and height
 * UV scaling and rotation per texture (will likely change to paintable scale and rotation)
 * Sculpting: Raise, Lower, Flatten, Expand (Multiply away from 0), Reduce (Divide towards 0), Smooth (beware of a [bug](https://github.com/outobugi/Terrain3D/issues/112))
-* Painting: Texture, Color, Wetness (roughness)
+* Painting: Texture, Color, Wetness (roughness) with Height blending
 * Undo/Redo
 * [Import/Export data](Importing-&-Exporting-Data)
 
