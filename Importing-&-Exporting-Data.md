@@ -8,7 +8,7 @@ Currently importing and exporting is possible via code or our demo. We will [mak
 
 ![image](https://github.com/outobugi/Terrain3D/assets/632766/e780c97d-19a4-4843-86d7-21b140d533ac)
 
-3) In the inspector, select a file for height, control, and color maps. See [formats](#Supported-Import-Formats) below. File type is determined by extension.
+3) In the inspector, select a file for height, control, and color maps. See [formats](#supported-import-formats) below. File type is determined by extension.
 
 4) Specify the location of where in the world you want to import. Y is ignored. X/Z are rounded to the nearest `region_size` (defaults to 1024). The placed map is centered on that point. So a location of (-2000, 100, 1000) will be imported centered around (-2048, 0, 1024).
 
@@ -40,7 +40,7 @@ We can import any supported image format Godot can read into any of the map type
 * [Image formats stored in a Godot resource file](https://docs.godotengine.org/en/4.0/classes/class_image.html#enum-image-format): `tres`, `res`
 * R16 Height map aka RAW: For 16-bit heightmaps read/writable by World Machine, Unity, Krita, Photoshop, etc. Rename the extension to `r16`. Min/Max heights and image size are not stored in the file, so you must keep track of them elsewhere (such as in the name)
 
-Only EXR or R16 are recommended for heightmaps. Godot PNG only supports 8-bit per channel, so don't use it for heightmaps. It is fine for external editing of control and color maps which are RGBA. See [Terrain3DStorage](https://github.com/outobugi/GDExtensionTerrain/wiki/Terrain3DStorage#internal-data-storage).
+Only `exr` or `r16` (aka raw) are recommended for heightmaps. Godot PNG only supports 8-bit per channel, so don't use it for heightmaps. It is fine for external editing of control and color maps which are RGBA. See [Terrain3DStorage](https://github.com/outobugi/GDExtensionTerrain/wiki/Terrain3DStorage#internal-data-storage) for details on internal storage.
 
 Upon import, you can specify the location of import on the greater 16k^2 world. e.g. You could import multiple maps as separate or combined islands.
 
