@@ -49,6 +49,6 @@ See our [roadmap](https://github.com/users/outobugi/projects/1/views/1) for deta
 * **Foliage** - [It's on the list](https://github.com/outobugi/Terrain3D/issues/43). Non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader working, your own particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
 * **Object placement** - [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). Use [Scatter](https://github.com/HungryProton/scatter).
 * **Holes** - [We'll see](https://github.com/outobugi/Terrain3D/issues/60)
-* **Non-destructive layers** for things like grooves, paths, and rivers. It's possible, but not even on the list for consideration. The design is destructive, so this would require some thought and there are many higher priority needs before it. 
+* **Non-destructive layers** - Used for things like grooves, paths, and rivers. It's possible, but not even on the list for consideration. The design is destructive, so this would require some thought and there are many higher priority needs before it. 
 * **Water** - Out of scope. Use [WaterWays](https://github.com/Arnklit/Waterways) for rivers, or [Realistic Water Shader](https://godotengine.org/asset-library/asset/343) for lakes.
 
