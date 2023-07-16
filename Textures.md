@@ -12,6 +12,8 @@ Terrain3D supports up to 32 textures using albedo, height, normal, and roughness
           * RGB: Normal map (+Y OpenGL)
           * A: Roughness
 
+* All textures must be the same size.
+
 * Supported formats
      * DDS files: BC3 / DXT5, linear (not srgb), Color + alpha, Generate Mipmaps. These are accepted instantly by Godot with no settings. 
      * PNG files: Standard RGBA. In Godot you must go to the Import tab and select: `Mode: VRAM Compressed`, `Normal Map: Disabled`, `Mipmaps Generate: On`, then reimport each file.
