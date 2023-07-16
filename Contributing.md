@@ -24,8 +24,8 @@ In addition:
 * Everything braced - no if/for one-liners
 * Opening brace on the initial line (eg. `if (condition) {`), and ending brace at the same tab stop as the initial line.
 * Private variables/functions prefaced with `_`
-* Private/protected/public explicit and grouped together
-* Functions in h and cpp files in same order, except constructors always at the top and bind_methods always at the bottom of cpp files.
+* Private/public/protected explicit and grouped together
+* Functions in h and cpp files in same order
 * All code passed through clang-format. See below.
 
 ### clang-format
