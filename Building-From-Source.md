@@ -12,9 +12,9 @@ Follow Godot's instructions to set up your system to build Godot. You don't need
 You can either grab the zip file, or clone it on the command line. Only type in the commands after the $ prompts.
 
 ```
-$ git clone git@github.com:outobugi/GDExtensionTerrain.git
+$ git clone git@github.com:outobugi/Terrain3D.git
 
-Cloning into 'GDExtensionTerrain'...
+Cloning into 'Terrain3D'...
 Enter passphrase for key:
 remote: Enumerating objects: 125, done.
 remote: Counting objects: 100% (125/125), done.
@@ -23,12 +23,12 @@ remote: Total 125 (delta 56), reused 94 (delta 36), pack-reused 0
 Receiving objects: 100% (125/125), 42.20 KiB | 194.00 KiB/s, done.
 Resolving deltas: 100% (56/56), done.
 
-$ cd GDExtensionTerrain
+$ cd Terrain3D
 
-GDExtensionTerrain$ git submodule init
+Terrain3D$ git submodule init
 Submodule 'godot-cpp' (https://github.com/godotengine/godot-cpp.git) registered for path 'godot-cpp'
 
-GDExtensionTerrain$ git submodule update
+Terrain3D$ git submodule update
 Cloning into 'C:/GD/_plugins/TerrainGDEX/godot-cpp'...
 Submodule path 'godot-cpp': checked out '9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f'
 
@@ -62,7 +62,7 @@ Clicking the `...` on the right expands the description which shows `4.0-stable`
 ### Using the command line
 Alternatively you can use git to search on the command line. This will search the server (origin) for all commit messages with `stable` allowing you to find the commits. Make sure to grab the top commit message (`9d1c396..`), not the upstream commit shown at the bottom, which is from the Godot repository.
 ```
-GDExtensionTerrain/godot-cpp$ git log origin -Gstable
+Terrain3D/godot-cpp$ git log origin -Gstable
 commit 9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f (HEAD -> master, tag: godot-4.0-stable, origin/master, origin/HEAD, origin/4.0)
 Author: Rémi Verschelde <rverschelde@gmail.com>
 Date:   Wed Mar 1 15:32:44 2023 +0100
@@ -88,16 +88,16 @@ Once you have the proper tag or commit string, you just need to check it out. If
 These examples will change the godot-cpp repository to 4.0-stable and 4.02-stable, respectively:
 
 ```
-GDExtensionTerrain$ cd godot-cpp
+Terrain3D$ cd godot-cpp
 
-GDExtensionTerrain/godot-cpp$ git checkout 9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f
+Terrain3D/godot-cpp$ git checkout 9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f
 HEAD is now at 9d1c396 gdextension: Sync with upstream commit 92bee43adba8d2401ef40e2480e53087bcb1eaf1 (4.0-stable)
 ```
 
 or
 
 ```
-GDExtensionTerrain/godot-cpp$ git checkout godot-4.0.2-stable
+Terrain3D/godot-cpp$ git checkout godot-4.0.2-stable
 Previous HEAD position was 9d1c396 gdextension: Sync with upstream commit 92bee43adba8d2401ef40e2480e53087bcb1eaf1 (4.0-stable)
 HEAD is now at 7fb46e9 gdextension: Sync with upstream commit 7a0977ce2c558fe6219f0a14f8bd4d05aea8f019 (4.0.2-stable)
 
@@ -106,9 +106,9 @@ HEAD is now at 7fb46e9 gdextension: Sync with upstream commit 7a0977ce2c558fe621
 ## 5. Build the extension
 
 ```
-GDExtensionTerrain/godot-cpp$ cd ..
+Terrain3D/godot-cpp$ cd ..
 
-GDExtensionTerrain$ scons
+Terrain3D$ scons
 ```
 
 Upon success you should see something like this at the end:
@@ -174,15 +174,15 @@ scons -H
 ### When running scons, I get these errors:
 
 ```
-GDExtensionTerrain$ scons
+Terrain3D$ scons
 scons: Reading SConscript files ...
 
 scons: warning: Calling missing SConscript without error is deprecated.
 Transition by adding must_exist=False to SConscript calls.
 Missing SConscript 'godot-cpp\SConstruct'
-File "C:\gd\_plugins\GDExtensionTerrain\SConstruct", line 6, in <module>
+File "C:\gd\_plugins\Terrain3D\SConstruct", line 6, in <module>
 AttributeError: 'NoneType' object has no attribute 'Append':
-  File "C:\gd\_plugins\GDExtensionTerrain\SConstruct", line 9:
+  File "C:\gd\_plugins\Terrain3D\SConstruct", line 9:
     env.Append(CPPPATH=["src/"])
 
 ```
@@ -193,7 +193,7 @@ Your godot-cpp directory is probably empty. Review the instructions above for up
 Your godot-cpp version probably does not match your engine version. At this time, they must match. Review the instructions above for switching versions. Test the example project in the next question.
 
 ### How can I make sure godot-cpp is the right version and working?
-You'll find a test project in `godot-cpp/test/`. Make sure this test project works with your Godot version first, then come back and try GDExtensionTerrain again.
+You'll find a test project in `godot-cpp/test/`. Make sure this test project works with your Godot version first, then come back and try Terrain3D again.
   * Build the example plugin in `godot-cpp/test/`.
   * Copy `example.gdextension` and `bin` into the root folder of your project.
   * Run Godot. If it crashes, you're on the wrong version, or Godot-cpp has a problem that the maintainers will need to resolve.
