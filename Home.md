@@ -14,7 +14,7 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 
 ### Alpha Release Notes
 
-* Setting up textures might be a bit of a challenge right now. We overlooked PNG support, and it only works with DDS files (which are better to use). See [Textures](Textures).
+* Setting up textures might be a bit of a challenge right now. We overlooked PNG support, and it only works with DDS files (which are better to use but anyway). See [Textures](Textures) to learn how to channel pack and set up the files.
 
 ### Implemented Features
 
