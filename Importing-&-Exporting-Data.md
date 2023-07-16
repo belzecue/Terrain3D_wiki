@@ -1,48 +1,44 @@
 Currently importing and exporting is possible via code or our demo. We will [make a UI](https://github.com/outobugi/GDExtensionTerrain/issues/81)  eventually. In the meantime, we have written a script that uses the Godot Inspector as a makeshift UI. You can use it to make a data file for your other scenes.
 
-## How To Import Data
+## Importing Data
 
-1) Open up the Demo project and load `demo/Import.tscn`
+1) Open `addons/terrain_3d/tools/importer.tscn`
 
-2) Click Terrain3D and create a new Terrain3DStorage. Save the file wherever you wish. Make sure to save it as `.res`.
+2) Click Importer in the scene tree.
 
-![image](https://github.com/outobugi/GDExtensionTerrain/assets/632766/bf5cd9ed-0285-425f-a011-7e6cd562015f)
+![image](https://github.com/outobugi/Terrain3D/assets/632766/e780c97d-19a4-4843-86d7-21b140d533ac)
 
-3) Click on the Import node. 
+3) In the inspector, select a file for height, control, and color maps. See [formats](#Supported-Import-Formats) below. File type is determined by extension.
 
-4) In the inspector, `Import File` section, use the folder icons to specify a height map, and optional color or control maps. 
-
-![image](https://github.com/outobugi/GDExtensionTerrain/assets/632766/8cdd2c75-6a24-4c2e-8223-2fd0fee97299)
-
-5) Specify the location where in the world you want it. Y is ignored. X/Z are rounded to the nearest `region_size` (defaults to 1024). The map is placed centered on that point. So a location of (-2000, 100, 1000) will be imported centered around (-2048, 0, 1024).
-
-6) Add an offset and/or scale to adjust every pixel on the heightmap. Scale is applied first, then offset. `clr.r = (clr.r * p_scale) + p_offset;`
-
-7) If you are importing an R16 heightmap, specify the min/max height range (eg. -328, 543), and image dimensions (eg 2048x2048). See [import formats](#supported-image-formats) below.
-
-8) Click `Run import` and wait. If you have the console open, and the Terrain `debug_level` set to `debug`, you'll see progress or errors.
-
+4) Specify the location of where in the world you want to import. Y is ignored. X/Z are rounded to the nearest `region_size` (defaults to 1024). The placed map is centered on that point. So a location of (-2000, 100, 1000) will be imported centered around (-2048, 0, 1024).
 
 Notes:
-* You can import several times into the larger 16k x 16k world by specifying different locations.
-* Each time you import, it will overwrite the height, control and color for the section you imported. So if you specify only the heightmap and leave control/color blank, it will erase any control/color data in that region.
+* You can import multiple times into the larger world map by specifying different locations.
+* You can also reimport to the same location to overwrite anything there. 
+* Each time you import, it will overwrite the height, control and color for the section you imported. Even if you specify only the heightmap and leave control/color blank, it will erase any control/color data in that region. (will be separated later)
 
-## How To Export Data
+5) Specify any desired height offset or scale. The scale gets applied first. (eg. 100, -100 would scale the terrain by 100, then lower the whole terrain by 100).
 
-Start with steps 1-3 above.
+Note that we store full range values. If you sculpt a hill to a height of 50, that's what goes into the data file. Your heightmap values may be normalized to the range of 0-1. If you import and it's not visible, try scaling the height up by 300-500.
 
-3) Select the type of map you wish to extract: Height (standard), Color (rgba), Control (proprietary).
+6) If you have a RAW or R16 file (same thing, different extension), make sure it is named `.r16`. You can specify the height range and dimensions next. These are not stored in the file so you must know them. I prefer to place them in the filename.
 
-4) Specify the name, which will determine the file type based upon extension. See [export formats](#supported-export-formats).
+7) Click `Run Import` and wait 10-30 seconds. Look at the console for activity or errors. If the `Terrain3D.debug_level` set to `debug`, you'll also see progress.
 
-5) Click `Run Export` and wait. 10-30s is normal. Look at your file system or the console for status.
+8) When you are happy with the import, scroll down in the inspector (half of it is hidden by the `Surfaces` panel) until you see `Terrain3D, Storage`.
+
+9) Click the right arrow next to the Terrain3DStorage file and save the file wherever you wish. Make sure to save it as `.res` which is a binary Godot resource file. 
+
+![image](https://github.com/outobugi/Terrain3D/assets/632766/96263998-a627-42ab-a029-48d629ecb163)
+
+You can now load this `res` file into a Terrain3D in any of your scenes. You can also preload an existing storage file in the importer, then import more data into it and save it again.
 
 ## Supported Import Formats
 
 We can import any supported image format Godot can read into any of the map types. These types include:
-* [Image formats for external files](https://docs.godotengine.org/en/4.0/tutorials/assets_pipeline/importing_images.html#supported-image-formats): `bmp`, `dds`, `exr`, `hdr`, `jpg`, `jpeg`, `png`, `tga`, `svg`, `webp`.
-* [Image formats stored in a Godot resource file](https://docs.godotengine.org/en/4.0/classes/class_image.html#enum-image-format): `.tres`, `.res`.
-* R16 Height map aka RAW: For 16-bit heightmaps read/writable by World Machine, Unity, Krita, Photoshop, etc. Rename the extension to `.r16`. Min/Max heights and image size are not stored in the file, so you must keep track of them elsewhere (such as in the name).
+* [Image formats for external files](https://docs.godotengine.org/en/4.0/tutorials/assets_pipeline/importing_images.html#supported-image-formats): `bmp`, `dds`, `exr`, `hdr`, `jpg`, `jpeg`, `png`, `tga`, `svg`, `webp`
+* [Image formats stored in a Godot resource file](https://docs.godotengine.org/en/4.0/classes/class_image.html#enum-image-format): `tres`, `res`
+* R16 Height map aka RAW: For 16-bit heightmaps read/writable by World Machine, Unity, Krita, Photoshop, etc. Rename the extension to `r16`. Min/Max heights and image size are not stored in the file, so you must keep track of them elsewhere (such as in the name)
 
 Only EXR or R16 are recommended for heightmaps. Godot PNG only supports 8-bit per channel, so don't use it for heightmaps. It is fine for external editing of control and color maps which are RGBA. See [Terrain3DStorage](https://github.com/outobugi/GDExtensionTerrain/wiki/Terrain3DStorage#internal-data-storage).
 
@@ -51,12 +47,36 @@ Upon import, you can specify the location of import on the greater 16k^2 world. 
 It will slice or pad odd sized images into region sized chunks (default is 1024x1024). e.g. You could import a 4k x 2k EXR into the height map, several 1k x 1k PNGs into the color map, and a 5123 x 3769 jpg into the control map and position them so they are adjacent.
 
 
+## Exporting Data
+
+1) Open addons/terrain_3d/tools/importer.tscn
+
+2) Click Importer in the scene tree.
+
+3) Scroll the inspector down to Terrain3D, Storage. Click the right arrow, and load the storage file you wish to export from.
+
+![image](https://github.com/outobugi/Terrain3D/assets/632766/e26fd2e8-0b40-431c-b00c-f161513bedcf)
+
+4) Scroll the inspector to `Export File`.
+
+![image](https://github.com/outobugi/Terrain3D/assets/632766/666e9a6d-1320-49e3-8488-9f42fd6f0d24)
+
+5) Select the type of map you wish to extract: Height (32-bit floats), Color (rgba), Control (RGB proprietary).
+
+6) Specify the name, which will determine the file type based upon extension. See [export formats](#supported-export-formats) for recommendations.
+
+7) Click `Run Export` and wait. 10-30s is normal. Look at your file system or the console for status.
+
 ## Supported Export Formats
 
 We can export any map as `r16`, `exr`, `png`, `jpg`, `webp`, or native Godot resource formats `tres` for text and `res` for binary (with `ResourceSaver::FLAG_COMPRESS` enabled).
 
-Only EXR or R16 are recommended for heightmaps. Godot PNG only supports 8-bit per channel, so don't use it for heightmaps. It is fine for external editing of control and color maps which are RGBA. See [Terrain3DStorage](https://github.com/outobugi/GDExtensionTerrain/wiki/Terrain3DStorage#internal-data-storage).
+For heightmaps, use `exr` or `r16` (aka raw) for external tools, or `res` for Godot only use. Godot PNG only supports 8-bit per channel, so it will give you blocky heightmaps.
+
+For color or control maps, use `png`, `tga` or another lossless rgba format. External tools can edit these. `res` for Godot only use.
+
+Control maps can be edited in a paint application, but the data is proprietary to this tool and won't be understood by any other. See [Terrain3DStorage](https://github.com/outobugi/GDExtensionTerrain/wiki/Terrain3DStorage#internal-data-storage).
 
 The exporter takes the smallest rectangle that will fit around all active regions in the 16k^2 world and export that as an image. So, if you have a 1k x 1k island in the NW corner, and a 2k x 3k island in the center, with a 1k strait between them, the resulting export image will be something like 4k x 5k. You'll need to specify the location (rounded to `region_size`) when reimporting to have a perfect round trip.
 
-The demo tool does not offer region by region export, but there is an API where you can retrieve any given region, then you can use `Image` to save it externally yourself.
+The exporter tool does not offer region by region export, but there is an API where you can retrieve any given region, then you can use `Image` to save it externally yourself.
