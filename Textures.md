@@ -14,10 +14,10 @@ Terrain3D supports up to 32 textures using albedo, height, normal, and roughness
 
 * Supported formats
      * DDS files: BC3 / DXT5, linear (not srgb), Color + alpha, Generate Mipmaps. These are accepted instantly by Godot with no settings. 
-     * PNG files: In Godot you must go to the Import tab and select: `Mode: VRAM Compressed`, `Normal Map: Disabled`, `Mipmaps Generate: On`, then reimport each file.
+     * PNG files: Standard RGBA. In Godot you must go to the Import tab and select: `Mode: VRAM Compressed`, `Normal Map: Disabled`, `Mipmaps Generate: On`, then reimport each file.
      * Other formats like TGA are probably supported as long as you match similar settings above.
 
-* You can pack channels in tools like Photoshop, Krita, or [Gimp](https://www.gimp.org/). Then save as a PNG, or DDS. Working with alpha channels in photoshop can be a bit challenging so Gimp is recommended. In Gimp you can use the `Colors/Components/Compose` and `Decompose` menu options to turn RGBA channels into separate editable layers, and back into RGBA.
+* You can pack channels in tools like Photoshop, Krita, or [Gimp](https://www.gimp.org/). Then save as a PNG, or DDS (recommended) using the above settings. Working with alpha channels in photoshop can be a bit challenging so Gimp is recommended. In Gimp you can use the `Colors/Components/Compose` and `Decompose` menu options to turn RGBA channels into separate editable layers, and back into RGBA.
 
 * You can create DDS files by exporting them directly from Gimp, exporting from Photoshop with [Intel's DDS plugin](https://www.intel.com/content/www/us/en/developer/articles/tool/intel-texture-works-plugin.html), or converting RGBA PNGs using [NVidia's Texture Tools](https://developer.nvidia.com/nvidia-texture-tools-exporter)
 
