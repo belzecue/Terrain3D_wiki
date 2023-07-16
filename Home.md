@@ -6,7 +6,7 @@ See the readme for [Requirements](https://github.com/outobugi/Terrain3D#requirem
 
 # Project Status
 
-The project is an Alpha. It is pretty solid now, and mostly just missing advanced features. We are starting to experiment with it in our games. Below are specific details.
+The project is in Alpha. It is pretty solid now, and mostly just missing advanced features. We are starting to experiment with it in our games. Below are specific details.
 
 We need help developing the plugin. See [Contributing](Contributing) if you would like to participate.
 
