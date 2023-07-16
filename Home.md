@@ -1,14 +1,14 @@
 # Terrain3D Online Documentation
 
-All API documentation lives here for now, as there is no way to get documentation into the live help inside of Godot for GDExtensions.
+All API documentation lives in this wiki for now, as there currently is no way to get documentation into the live help inside of Godot for GDExtensions.
 
-See the wiki Contents on the right.
-
-See the readme for [Requirements](https://github.com/outobugi/Terrain3D#requirements) - [Installation](https://github.com/outobugi/Terrain3D#installation--setup) - [Contributing](https://github.com/outobugi/Terrain3D#contributing)
+See the readme for [Requirements](https://github.com/outobugi/Terrain3D#requirements) - [Installation](https://github.com/outobugi/Terrain3D#installation--setup)
 
 # Project Status
 
 The project is an Alpha. It is pretty solid now, and mostly just missing advanced features. We are starting to experiment with it in our games. Below are specific details.
+
+We need help developing the plugin. See [Contributing](Contributing) if you would like to participate.
 
 ### Implemented Features
 
