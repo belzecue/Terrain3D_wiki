@@ -12,6 +12,10 @@ We need help developing the plugin. See [Contributing](Contributing) if you woul
 
 For all other known issues not on this list, see [Issues](https://github.com/outobugi/Terrain3D/issues).
 
+### Alpha Release Notes
+
+* Setting up texturing might be a bit of a challenge right now. We overlooked PNG support, and it only works with DDS files. See [Textures](Textures) 
+
 ### Implemented Features
 
 * Geometric Clipmap Mesh Terrain (See [System Design](System-Design))
