@@ -19,8 +19,8 @@ To see collision in game, enable `Terrain3D.debug_show_collision`, and in the ed
 
 #### `WARNING: Terrain3D::_texture_is_valid: Invalid format. Expected DXT5 RGBA8.`
 
-Read [Textures](Textures) and channel pack the files.
+Read [Setting Up Textures](Setting-Up-Textures) and channel pack the files.
 
 #### `Albedo/Normal textures do not have same size!` and the terrain turns white
 
-All textures must be the same dimensions. Read [Textures](Textures) and review your textures for odd sizes. If the first set is 2k, all other textures need to be 2k as well.
+All textures must be the same dimensions. Read [Setting Up Textures](Setting-Up-Textures) and review your textures for odd sizes. If the first set is 2k, all other textures need to be 2k as well.
