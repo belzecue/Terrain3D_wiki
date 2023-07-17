@@ -6,7 +6,7 @@ Currently importing and exporting is possible via code or our demo. We will [mak
 
 2) Click Importer in the scene tree.
 
-![image](https://github.com/outobugi/Terrain3D/assets/632766/e780c97d-19a4-4843-86d7-21b140d533ac)
+![image](https://github.com/outobugi/Terrain3D/assets/632766/e8a43428-a1e2-4db5-bb2c-1b0e7b40d81d)
 
 3) In the inspector, select a file for height, control, and color maps. See [formats](#supported-import-formats) below. File type is determined by extension.
 
@@ -29,7 +29,7 @@ Note that we store full range values. If you sculpt a hill to a height of 50, th
 
 9) Click the right arrow next to the Terrain3DStorage file and save the file wherever you wish. Make sure to save it as `.res` which is a binary Godot resource file. 
 
-![image](https://github.com/outobugi/Terrain3D/assets/632766/96263998-a627-42ab-a029-48d629ecb163)
+![image](https://github.com/outobugi/Terrain3D/assets/632766/a20d2320-03b4-4612-989e-a889d7737b88)
 
 You can now load this `res` file into a Terrain3D in any of your scenes. You can also preload an existing storage file in the importer, then import more data into it and save it again.
 
@@ -55,11 +55,11 @@ It will slice or pad odd sized images into region sized chunks (default is 1024x
 
 3) Scroll the inspector down to Terrain3D, Storage. Click the right arrow, and load the storage file you wish to export from.
 
-![image](https://github.com/outobugi/Terrain3D/assets/632766/e26fd2e8-0b40-431c-b00c-f161513bedcf)
+![image](https://github.com/outobugi/Terrain3D/assets/632766/2b6ad8f6-3f7d-45ef-bc4b-df74676e370b)
 
 4) Scroll the inspector to `Export File`.
 
-![image](https://github.com/outobugi/Terrain3D/assets/632766/666e9a6d-1320-49e3-8488-9f42fd6f0d24)
+![image](https://github.com/outobugi/Terrain3D/assets/632766/536b5d10-d7d2-4791-8917-12cbb15a6e86)
 
 5) Select the type of map you wish to extract: Height (32-bit floats), Color (rgba), Control (RGB proprietary).
 
