@@ -39,9 +39,10 @@ Terrain3D supports up to 32 textures using albedo, height, normal, and roughness
 
 5. Your new file is channel packed properly. Now export the file with the following settings. DDS is highly recommended.
 
-**As DDS**: BC3 / DXT5, linear (not srgb), Color + alpha, Generate Mipmaps. Insert into Godot and you're done.
+**As DDS**: Change `Compression` to `BC3 / DXT5`, `Mipmaps` to `Generate Mipmaps`. Insert into Godot and you're done.
 
-**As PNG**: Use the settings below. In Godot you must go to the Import tab and select: `Mode: VRAM Compressed`, `Normal Map: Disabled`, `Mipmaps Generate: On`, then click `Reimport`.
+![image](https://github.com/outobugi/Terrain3D/assets/632766/030d87a7-43ed-4fed-bac6-c69bb6fcd11a)
 
-![image](https://github.com/outobugi/Terrain3D/assets/632766/faa91833-ccf1-411f-9296-b05332a3ede5)
+**As PNG**: Change `automatic pixel format` to `8bpc RGBA`. In Godot you must go to the Import tab and select: `Mode: VRAM Compressed`, `Normal Map: Disabled`, `Mipmaps Generate: On`, then click `Reimport`.
 
+![image](https://github.com/outobugi/Terrain3D/assets/632766/d30fa7c4-177c-491f-bcaa-962f9a1f0c6b)
