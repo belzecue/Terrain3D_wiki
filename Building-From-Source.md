@@ -29,7 +29,7 @@ Terrain3D$ git submodule init
 Submodule 'godot-cpp' (https://github.com/godotengine/godot-cpp.git) registered for path 'godot-cpp'
 
 Terrain3D$ git submodule update
-Cloning into 'C:/GD/_plugins/TerrainGDEX/godot-cpp'...
+Cloning into 'C:/GD/_plugins/Terrain3D/godot-cpp'...
 Submodule path 'godot-cpp': checked out '9d1c396c54fc3bdfcc7da4f3abcb52b14f6cce8f'
 
 ```
@@ -39,7 +39,11 @@ This number is important for the next section.
 
 ## 3. Identify the appropriate godot-cpp version
 
-Your version of godot-cpp should match the version of your Godot engine. e.g. Godot Engine 4.0.2 and godot-cpp 4.0.2. In the past this was very strict. At this time, it seems that 4.0 and 4.02 are interchangeable. Use one of these steps to find the correct commit hash.
+Your version of godot-cpp needs to match the version of your Godot engine. e.g. Godot Engine 4.0.2 and godot-cpp 4.0.2. We are including updated versions in our updates so this step may not be necessary unless you get a lot of build errors or Godot crashes on load.
+
+You can check the version of your godot-cpp by going into that directory and typing `git log`.
+
+In the past, matching this was very strict. At this time, it seems that 4.0 and 4.02 are interchangeable. Use one of these steps below to find and select the correct tag or commit hash, then move on to step 4.
 
 
 ### Using tags
@@ -74,7 +78,7 @@ Date:   Wed Mar 1 15:32:44 2023 +0100
 
 Note, for updating you may need to update your git repo:
 ```
-$ git fetch
+Terrain3D/godot-cpp$ git fetch
 From https://github.com/godotengine/godot-cpp
  * [new tag]         godot-4.0.1-stable -> godot-4.0.1-stable
  * [new tag]         godot-4.0.2-stable -> godot-4.0.2-stable
@@ -114,7 +118,7 @@ Terrain3D$ scons
 Upon success you should see something like this at the end:
 
 ```
-Creating library project\addons\terrain\bin\libterrain.windows.debug.x86_64.lib and object project\addons\terrain\bin\libterrain.windows.debug.x86_64.exp
+Creating library project\addons\terrain_3d\bin\libterrain.windows.debug.x86_64.lib and object project\addons\terrain_3d\bin\libterrain.windows.debug.x86_64.exp
 scons: done building targets.
 
 ```
@@ -123,7 +127,7 @@ scons: done building targets.
 ## 6. Set up the extension in Godot
 
 * Close Godot. (Not required the first time, but required when updating the files.)
-* Copy the files in `project/addons/terrain` to your own project folder under `/addons/terrain`. 
+* Copy the files in `project/addons/terrain_3d` to your own project folder under `/addons/terrain_3d`. 
 * Open Godot and create or open a scene. Add a new node and search for Terrain3D.
 * Make a new Terrain3DStorage resource.
 * Save the storage resource to a binary .res file (optional but recommended).
@@ -194,7 +198,7 @@ Your godot-cpp version probably does not match your engine version. At this time
 
 ### How can I make sure godot-cpp is the right version and working?
 You'll find a test project in `godot-cpp/test/`. Make sure this test project works with your Godot version first, then come back and try Terrain3D again.
-  * Build the example plugin in `godot-cpp/test/`.
+  * Build the example plugin by typing `scons` while in the `godot-cpp/test/` directory.
   * Copy `example.gdextension` and `bin` into the root folder of your project.
   * Run Godot. If it crashes, you're on the wrong version, or Godot-cpp has a problem that the maintainers will need to resolve.
   * Create a new scene.
