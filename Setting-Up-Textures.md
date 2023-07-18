@@ -27,3 +27,21 @@ Terrain3D supports up to 32 textures using albedo, height, normal, and roughness
 
 <img width="800" src="https://doc.babylonjs.com/_next/image?url=%2Fimg%2Fhow_to%2FMaterials%2Fnormal_maps1.jpg&w=1920&q=75"/>
 
+### Channel Packing With Gimp
+
+1. Open up your RGB Albedo or Normal file and your greyscale Roughness or Height files.
+
+2. On the RGB file select `Colors/Components/Decompose`. Select `RGB`. Keep `Decompose to layers` checked. Now on the resulting image you have three greyscale layers for RGB. 
+
+3. Copy the greyscale file and paste it as a new layer into this decomposed file. Name the new layer `alpha`.
+
+4. Select `Colors/Components/Compose`. Select `RGBA` and ensure each named layer matches the right channel.
+
+5. Your new file is channel packed properly. Now export the file with the following settings. DDS is highly recommended.
+
+**As DDS**: BC3 / DXT5, linear (not srgb), Color + alpha, Generate Mipmaps. Insert into Godot and you're done.
+
+**As PNG**: Use the settings below. In Godot you must go to the Import tab and select: `Mode: VRAM Compressed`, `Normal Map: Disabled`, `Mipmaps Generate: On`, then click `Reimport`.
+
+![image](https://github.com/outobugi/Terrain3D/assets/632766/faa91833-ccf1-411f-9296-b05332a3ede5)
+
