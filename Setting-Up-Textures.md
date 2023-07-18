@@ -19,7 +19,7 @@ Terrain3D supports up to 32 textures using albedo, height, normal, and roughness
      * PNG files: Standard RGBA. In Godot you must go to the Import tab and select: `Mode: VRAM Compressed`, `Normal Map: Disabled`, `Mipmaps Generate: On`, then reimport each file.
      * Other formats like TGA are probably supported as long as you match similar settings above.
 
-* You can pack channels in tools like Photoshop, Krita, or [Gimp](https://www.gimp.org/). Working with alpha channels in Photoshop and Krita can be a bit challenging so Gimp is recommended. See [How To Channel Pack Images With Gimp](#How-To-Channel-Pack Images-With-Gimp) below. Then save as a PNG, or DDS (recommended) using the above settings. 
+* You can pack channels in tools like Photoshop, Krita, or [Gimp](https://www.gimp.org/). Working with alpha channels in Photoshop and Krita can be a bit challenging so Gimp is recommended. See [How To Channel Pack Images With Gimp](#how-to-channel-pack-images-with-gimp) below. Then save as a PNG, or DDS (recommended) using the above settings. 
 
 * You can create DDS files by exporting them directly from Gimp, exporting from Photoshop with [Intel's DDS plugin](https://www.intel.com/content/www/us/en/developer/articles/tool/intel-texture-works-plugin.html), or converting RGBA PNGs using [NVidia's Texture Tools](https://developer.nvidia.com/nvidia-texture-tools-exporter)
 
@@ -27,7 +27,7 @@ Terrain3D supports up to 32 textures using albedo, height, normal, and roughness
 
 <img width="800" src="https://doc.babylonjs.com/_next/image?url=%2Fimg%2Fhow_to%2FMaterials%2Fnormal_maps1.jpg&w=1920&q=75"/>
 
-### How To Channel Pack Images With Gimp
+## How To Channel Pack Images With Gimp
 
 1. Open up your RGB Albedo or Normal file and your greyscale Roughness or Height files.
 
