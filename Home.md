@@ -29,10 +29,11 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 
 
 ### Interaction With Godot Modules
-* **Platforms** - Tested on windows, Linux, OSX. It runs on android, but there's a strange floating point precision issue in the shader. 
-* **Running the game in the editor** - Works for our demo
+* **Platforms** - Tested on windows, Linux, OSX. We have one report of it working on android, a Samsung galaxy tab, but there's a strange floating point precision issue in the shader. 
+* **Running the game from the editor** - Works
 * **Exported games** - Debug export works. See [Build w/o the editor for release templates](https://github.com/outobugi/Terrain3D/issues/76) and [Initial import errors](https://github.com/outobugi/Terrain3D/issues/20)
-* **Physics** - Terrain collision uses a HeightMap shape for each region. The demo player uses a CharacterBody and works fine.
+* **Physics** - Works for your defined regions. No collision outside of those.
+
 * **Navigation Server** - Haven't tested it, but the terrain does provide full lod0 collision, so baking should work.
 * **Occlusion** - Haven't tested it. At the least you can use manual shapes.
 * **SDGFI** - Seems to work fine.
