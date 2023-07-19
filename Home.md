@@ -34,7 +34,7 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 
 
 ### Interaction With Godot Modules
-* **Platforms** - Works on Windows, Linux, OSX. Even one successful report on Android (Samsung galaxy tab, but there's a strange floating point precision issue in the shader)
+* **Platforms** - Works on Windows, Linux, OSX. Even one successful report on Android (Samsung galaxy tab, but there's a [shader issue](https://github.com/outobugi/Terrain3D/issues/137))
 * **Running the game from the editor** - Works
 * **Exported games** - Works
 * **Physics** - Works within regions you define in your world. No collision outside of those.
