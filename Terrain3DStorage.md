@@ -9,12 +9,12 @@ A `Terrain3DStorage` object stores all terrain data in the following containers:
 
 Defines the height value of the terrain at a given pixel. This is sent to the vertex shader on the GPU which modifies the mesh in real-time.
 
-Editing is always done in 32-bit. We do provide an option to save as 16-bit, which converts to 32-bit on load and back to 16-bit on write.
+Editing is always done in 32-bit. We do provide an option to save as 16-bit, which converts to 32-bit on load and back to 16-bit on save.
 
 ### Control Maps
 * `TypedArray<Image> control_maps;`
 * Godot type: `Array[Image]`
-* Image Format: `FORMAT_RGB8`, 24-bits per pixel as four 8-bit components
+* Image Format: `FORMAT_RGB8`, 24-bits per pixel as three 8-bit components
 
 Defines which texture index is used at a given pixel. 
 
@@ -32,6 +32,7 @@ In beta, this map it will look something like this:
 * 3 bits - uv scale index
 * 3 bits - slope index
 * 3 bits - rotation index
+* 1 bit - hole
 * and more reserved for other paintable features or more textures
 
 The indices above will select from an 8-index array of values such as `{ 0.0f, .125f, .25f, .334f, .5f, .667f, .8f, 1.0f };`
@@ -43,7 +44,7 @@ The indices above will select from an 8-index array of values such as `{ 0.0f, .
 
 RGB is used for color, which is `multiplied` by albedo in the shader. Multiply is a blend mode that only darkens.
 
-A is used for roughness. Reduce roughness to make the texture more glossy for painting wetness.
+A is used for a roughness modifier. A value of 0.5 means no change to the existing texture roughness. Higher than this value increases roughness, lower decreases it.
 
 ### Region Offsets
 
