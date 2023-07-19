@@ -2,7 +2,9 @@
 
 Terrain3D supports up to 32 textures using albedo, height, normal, and roughness.
 
-## Setting Up Textures
+## Texture Format
+
+* **All textures must be the same size**.
 
 * Texture files need to be channel packed as follows:
      * Albedo texture
@@ -11,8 +13,6 @@ Terrain3D supports up to 32 textures using albedo, height, normal, and roughness
      * Normal texture
           * RGB: Normal map (+Y OpenGL)
           * A: Roughness
-
-* **All textures must be the same size**.
 
 * Supported formats
      * DDS files: BC3 / DXT5, linear (not srgb), Color + alpha, Generate Mipmaps. These are accepted instantly by Godot with no settings. **Highly recommended**
@@ -29,15 +29,15 @@ Terrain3D supports up to 32 textures using albedo, height, normal, and roughness
 
 ## How to Channel Pack Images with Gimp
 
-1. Open up your RGB Albedo or Normal file and your greyscale Roughness or Height files.
+1. Open up your RGB Albedo and greyscale Height files (or Normal and Roughness).
 
 2. On the RGB file select `Colors/Components/Decompose`. Select `RGB`. Keep `Decompose to layers` checked. Now on the resulting image you have three greyscale layers for RGB. This would be a good time to invert the green channel if you need to convert a Normalmap from DirectX to Opengl.
 
 3. Copy the greyscale file and paste it as a new layer into this decomposed file. Name the new layer `alpha`.
 
-4. Select `Colors/Components/Compose`. Select `RGBA` and ensure each named layer matches the right channel.
+4. Select `Colors/Components/Compose`. Select `RGBA` and ensure each named layer connects to the correct channel.
 
-5. Your new file is channel packed properly. Now export the file with the following settings. DDS is highly recommended.
+5. Your new image is channel packed properly. Now export the file with the following settings. DDS is highly recommended.
 
 ### Exporting As DDS
 * Change `Compression` to `BC3 / DXT5`
