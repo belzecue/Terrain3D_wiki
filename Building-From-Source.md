@@ -145,12 +145,12 @@ The `scons` build system has additional useful options. These come from the GDEx
 ```
 # Linux, other Unix, Git bash on Windows
 scons --clean
-rm project/addons/terrain/bin/*
+rm project/addons/terrain_3d/bin/*
 find . -iregex '.+\.\(a\|lib\|o\|obj\|os\)' -delete
 
 # Windows
 scons --clean
-del /q project\addons\terrain\bin\*.*
+del /q project\addons\terrain_3d\bin\*.*
 del /s /q *.a *.lib *.o *.obj *.os
 ```
 
