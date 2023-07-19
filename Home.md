@@ -4,7 +4,12 @@ All API documentation lives in this wiki for now, as there currently is no way t
 
 See the readme for [Requirements](https://github.com/outobugi/Terrain3D#requirements) and [Installation](https://github.com/outobugi/Terrain3D#installation--setup).
 
-The main branch is currently compatible with 4.1. We have [tagged 4.0.3](https://github.com/outobugi/Terrain3D/releases/tag/v0.8-alpha_gd4.0.3), but are not maintaining a branch. As we continue to expand the code, if you wish to try and build it against 4.0, you can try by undoing [these changes](https://github.com/outobugi/Terrain3D/commit/da455147d18674d02ba4b88bd575b58de472c617).
+# Compatible Engine Versions
+
+The main branch is currently compatible with 4.1. The binary releases will likely work on 4.1.1 and future minor versions, and building shouldn't be an issue as long as you update godot-cpp.
+
+We have tagged [4.0.3](https://github.com/outobugi/Terrain3D/releases/tag/v0.8-alpha_gd4.0.3), but are not maintaining a branch. As we continue to develop the code, if you wish to try and build the current master branch against 4.0, undo [these changes](https://github.com/outobugi/Terrain3D/commit/da455147d18674d02ba4b88bd575b58de472c617).
+
 
 # Project Status
 
@@ -22,7 +27,7 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 * Up to 16 x 16, 1024 x 1024 sized, non-contiguous regions. Add/remove regions and pay only for the VRAM you use
 * Up to 32 textures using albedo, normal, roughness, and height
 * UV scaling and rotation per texture (will likely change to paintable scale and rotation)
-* Sculpting: Raise, Lower, Flatten, Expand (Multiply away from 0), Reduce (Divide towards 0), Smooth (beware of a [bug](https://github.com/outobugi/Terrain3D/issues/112))
+* Sculpting: Raise, Lower, Flatten, Expand (Multiply away from 0), Reduce (Divide towards 0), Smooth
 * Painting: Texture, Color, Wetness (roughness) with Height blending
 * Undo/Redo
 * [Import/Export data](Importing-&-Exporting-Data)
