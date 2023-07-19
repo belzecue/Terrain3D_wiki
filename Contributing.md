@@ -13,7 +13,7 @@ We use the standard [Godot PR workflow](https://docs.godotengine.org/en/stable/c
 In general, follow the [Godot GDScript style guidelines](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html). 
 In addition:
 * All variables and functions are static typed, with a colon then space (eg. `var state: int = 3`)
-* Auto static typing can be used *only* when the type is specifically assigned (eg. `var point := Vector2(1, 1)`
+* Auto static typing can be used *only* when the type is specifically assigned (eg. `var point := Vector2(1, 1)`)
 * Two blank lines between functions
 
 ## C++
