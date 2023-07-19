@@ -38,7 +38,6 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 * **Running the game from the editor** - Works
 * **Exported games** - Works
 * **Physics** - Works within regions you define in your world. No collision outside of those.
-
 * **Navigation Server** - Haven't tested it, but the terrain does provide full lod0 collision, so baking should work.
 * **Occlusion** - Haven't tested it. At the least you can use manual shapes.
 * **SDGFI** - Seems to work fine.
@@ -56,7 +55,7 @@ See our [roadmap](https://github.com/users/outobugi/projects/1/views/1) for deta
 * **Advanced texturing techniques** - eg. Paintable uv scale / slope / rotation, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [System Design](System-Design))
 * **Foliage** - [It's on the list](https://github.com/outobugi/Terrain3D/issues/43). Non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader working, your own particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
 * **Object placement** - [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). Use [Scatter](https://github.com/HungryProton/scatter).
-* **Holes** - [We'll see](https://github.com/outobugi/Terrain3D/issues/60)
+* **Holes** - Visual is likely. Collision less likely. [We'll see](https://github.com/outobugi/Terrain3D/issues/60)
 * **Non-destructive layers** - Used for things like river beds, roads or paths that follow a curve and tweak the terrain. It's possible, but very low priority. 
 * **Water** - Out of scope. Use [WaterWays](https://github.com/Arnklit/Waterways) for rivers, or [Realistic Water Shader](https://godotengine.org/asset-library/asset/343) for lakes.
 
