@@ -2,9 +2,9 @@
 
 ## Debug Logs
 
-Terrain3D has debugging logs for everything. Make sure you're running Godot with the console open. In the Terrain3D node, set debug_level to `debug`. 
+Terrain3D has debugging logs for everything. Make sure you're running Godot with the console open (you ran `Godot_v4.*_console.exe`). In the Terrain3D node, set debug_level to `debug`. 
 
-To get help on anything you can't solve yourself, attach a full logs from your console. As long as Godot doesn't crash, it saves the log files on your drive. In Godot select, `Editor, Open Editor Data/Settings Menu`. On windows this opens `%appdata%\Godot` eg(`C:\Users\%username%\AppData\Roaming\Godot`). Look under `app_userdata\<your_project_name>\logs`. Otherwise you can copy and paste from the console window.
+To get help on anything you can't solve yourself, attach a full logs from your console or file system. As long as Godot doesn't crash, it saves the log files on your drive. In Godot select, `Editor, Open Editor Data/Settings Menu`. On windows this opens `%appdata%\Godot` eg(`C:\Users\%username%\AppData\Roaming\Godot`). Look under `app_userdata\<your_project_name>\logs`. Otherwise you can copy and paste from the console window.
 
 ## Debug Collision
 
@@ -20,7 +20,7 @@ To see collision in game, enable `Terrain3D.debug_show_collision`, and in the ed
 
 #### `WARNING: Terrain3D::_texture_is_valid: Invalid format. Expected DXT5 RGBA8.`
 
-Read [Setting Up Textures](Setting-Up-Textures) and channel pack the files.
+Read [Setting Up Textures](Setting-Up-Textures) to learn how to properly channel pack your textures.
 
 #### `Albedo/Normal textures do not have same size!` and the terrain turns white
 
