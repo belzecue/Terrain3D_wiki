@@ -109,10 +109,17 @@ HEAD is now at 7fb46e9 gdextension: Sync with upstream commit 7a0977ce2c558fe621
 
 ## 5. Build the extension
 
+By default `scons` will build the debug library which works for the editor and debug exports. You can add `target=template_release` to build the release version.
+
 ```
 Terrain3D/godot-cpp$ cd ..
 
+# To build the debug library
 Terrain3D$ scons
+
+# To build both debug and release versions sequentially (bash command line)
+Terrain3D$ scons && scons target=template_release
+
 ```
 
 Upon success you should see something like this at the end:
@@ -120,9 +127,7 @@ Upon success you should see something like this at the end:
 ```
 Creating library project\addons\terrain_3d\bin\libterrain.windows.debug.x86_64.lib and object project\addons\terrain_3d\bin\libterrain.windows.debug.x86_64.exp
 scons: done building targets.
-
 ```
-
 
 ## 6. Set up the extension in Godot
 
@@ -150,26 +155,20 @@ del /s /q *.a *.lib *.o *.obj *.os
 ```
 
 #### Manually specify the target platform
-Note this plugin is being build and tested on Windows and Linux. It will eventually be tested on MacOS, but mobile/web platforms are currently unknown.
+Note this plugin is supported for Windows, Linux and OSX. We've received successful reports of Android (samsung galaxy tab). Other platforms are unknown.
+
 ```
 # platform: Target platform (linux|macos|windows|android|ios|javascript)
 
 scons platform=linux
 ```
 
-#### Build release or debug_release templates
-```
-# target: Compilation target (editor|template_release|template_debug)
-
-scons target=template_release
-```
-
 #### See all options
 ```
+# Godot custom build options
 scons --help
 
-and
-
+# Scons application options
 scons -H
 ```
 
