@@ -43,7 +43,7 @@ Your version of godot-cpp needs to match the version of your Godot engine. e.g. 
 
 You can check the version of your godot-cpp by going into that directory and typing `git log`.
 
-In the past, matching this was very strict. At this time, it seems that 4.0 and 4.02 are interchangeable. Use one of these steps below to find and select the correct tag or commit hash, then move on to step 4.
+In the past, matching this was very strict. At this time, it seems that 4.0 and 4.0.2 are interchangeable. Use one of these steps below to find and select the correct tag or commit hash, then move on to step 4.
 
 
 ### Using tags
@@ -76,14 +76,14 @@ Date:   Wed Mar 1 15:32:44 2023 +0100
 [truncated]
 ```
 
-Note, for updating you may need to update your git repo:
+Note, you may need to update your git repo before it will find the latest tags:
 ```
 Terrain3D/godot-cpp$ git fetch
 From https://github.com/godotengine/godot-cpp
  * [new tag]         godot-4.0.1-stable -> godot-4.0.1-stable
  * [new tag]         godot-4.0.2-stable -> godot-4.0.2-stable
 ```
-Now we can search the logs above, or use the two new tags that were found, eg, godot-4.0.2-stable.
+Now we can search the logs above, or use the new tags that were found, eg, godot-4.0.2-stable.
 
 
 ## 4. Check out the correct version
