@@ -1,3 +1,4 @@
+**Note:** If you are building from source, that page has it's own [troubleshooting section](Building-From-Source#troubleshooting).
 
 ## Debug Logs
 
