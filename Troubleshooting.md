@@ -16,6 +16,13 @@ To see collision in game, enable `Terrain3D.debug_show_collision`, and in the ed
 
 ## Common Issues
 
+### Crashing
+
+#### Crash when starting Godot
+
+Try the demo scene first. If that doesn't work, most likely the library version does not match the engine version. If you downloaded a release binary, download the exactly matching engine version. If you built from source review the [instructions](Building-From-Source) to make sure your godot-cpp exactly matches the engine version you want to use. 
+
+
 ### Importing Textures
 
 #### `WARNING: Terrain3D::_texture_is_valid: Invalid format. Expected DXT5 RGBA8.`
