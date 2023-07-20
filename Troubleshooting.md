@@ -22,6 +22,9 @@ To see collision in game, enable `Terrain3D.debug_show_collision`, and in the ed
 
 Try the demo scene first. If that doesn't work, most likely the library version does not match the engine version. If you downloaded a release binary, download the exactly matching engine version. If you built from source review the [instructions](Building-From-Source) to make sure your godot-cpp exactly matches the engine version you want to use. 
 
+If the demo scene does work, you have an issue in your project. It could be a setting or file given to Terrain3D, or it could be anywhere in your project. 
+
+
 
 ### Importing Textures
 
