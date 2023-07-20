@@ -18,12 +18,15 @@ To see collision in game, enable `Terrain3D.debug_show_collision`, and in the ed
 
 ### Crashing
 
-#### Crash when starting Godot
+#### Godot Crashes on Load
 
-Try the demo scene first. If that doesn't work, most likely the library version does not match the engine version. If you downloaded a release binary, download the exactly matching engine version. If you built from source review the [instructions](Building-From-Source) to make sure your godot-cpp exactly matches the engine version you want to use. 
+If this is the first startup after installing the plugin, this is normal due to a bug in the engine currently. Restart Godot.
 
-If the demo scene does work, you have an issue in your project. It could be a setting or file given to Terrain3D, or it could be anywhere in your project. 
+If it still crashes, try the demo scene. 
 
+If that doesn't work, most likely the library version does not match the engine version. If you downloaded a release binary, download the exactly matching engine version. If you built from source review the [instructions](Building-From-Source) to make sure your `godot-cpp` directory exactly matches the engine version you want to use. 
+
+If the demo scene does work, you have an issue in your project. It could be a setting or file given to Terrain3D, or it could be anywhere else in your project. Divide and conquer. Copy your project and start ripping things out until you find the cause.
 
 
 ### Importing Textures
