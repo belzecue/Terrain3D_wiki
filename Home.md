@@ -6,7 +6,9 @@ See the readme for [Requirements](https://github.com/outobugi/Terrain3D#requirem
 
 # Compatible Engine Versions
 
-The main branch is currently compatible with 4.1. The binary releases will likely work on 4.1.1 and future minor versions, and building shouldn't be an issue as long as you update godot-cpp.
+In general you want to exact match the plugin version to the engine version. It may work with minor variations (eg 4.1 and 4.1.1), but that entirely depends on Godot's development at any given moment. You'll know it won't work if it crashes on startup. We release binaries for the current engine, but if you need to match a specific version, you'll need to [build the plugin yourself](Building-From-Source).
+
+The main branch is currently compatible with 4.1.
 
 We have tagged [4.0.3](https://github.com/outobugi/Terrain3D/releases/tag/v0.8-alpha_gd4.0.3), but are not maintaining a branch. As we continue to develop the code, if you wish to try and build the current master branch against 4.0, undo [these changes](https://github.com/outobugi/Terrain3D/commit/da455147d18674d02ba4b88bd575b58de472c617).
 
