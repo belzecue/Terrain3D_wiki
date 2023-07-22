@@ -56,7 +56,7 @@ See our [roadmap](https://github.com/users/outobugi/projects/1/views/1) for deta
 * **Double precision floats** - [Probable](https://github.com/outobugi/Terrain3D/issues/30)
 * **Advanced texturing techniques** - eg. Paintable uv scale / slope / rotation, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [System Design](System-Design))
 * **Foliage** - [It's on the list](https://github.com/outobugi/Terrain3D/issues/43). Non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader working, your own particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
-* **Holes** - Visual is likely. Collision is less likely. [See #60](https://github.com/outobugi/Terrain3D/issues/60)
+* **Holes** - Visual is likely. Collision is less likely, but there's a trick to allow a player to pass through the collision. [See #60](https://github.com/outobugi/Terrain3D/issues/60)
 * **Non-destructive layers** - Used for things like river beds, roads or paths that follow a curve and tweak the terrain. It's possible, but very low priority. 
 * **Object placement** - For objects with collision. [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). Use [Scatter](https://github.com/HungryProton/scatter).
 * **Water** - Out of scope. Use [WaterWays](https://github.com/Arnklit/Waterways) for rivers, or [Realistic Water Shader](https://godotengine.org/asset-library/asset/343) for lakes.
