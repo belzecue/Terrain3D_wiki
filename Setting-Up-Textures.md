@@ -2,6 +2,8 @@
 
 Terrain3D supports up to 32 textures using albedo, height, normal, and roughness.
 
+When your textures are set up properly, drag them from the file panel to the texture slots on each material. Clicking the dropdown menu and selecting `New ImageTexture` **won't work**, but you can use load or quickload to find your files.
+
 ## Texture Format
 
 * **All textures must be the same size**.
