@@ -63,7 +63,7 @@ It will slice or pad odd sized images into region sized chunks (default is 1024x
 
 5) Select the type of map you wish to extract: Height (32-bit floats), Color (rgba), Control (RGB proprietary).
 
-6) Specify the name, which will determine the file type based upon extension. See [export formats](#supported-export-formats) for recommendations.
+6) Specify the full file path and name, which will determine the file type based upon extension. You can enter any location on your harddrive, or preface the file name with `res://` to save into your Godot project folder. See [export formats](#supported-export-formats) for recommendations.
 
 7) Click `Run Export` and wait. 10-30s is normal. Look at your file system or the console for status.
 
