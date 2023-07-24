@@ -39,8 +39,9 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 * **Platforms** - Works on Windows, Linux, OSX. Even one successful report on Android (Samsung galaxy tab, but there's a [shader issue](https://github.com/outobugi/Terrain3D/issues/137))
 * **Running the game from the editor** - Works
 * **Exported games** - Works
-* **Physics** - Works within regions you define in your world. No collision outside of those.
-* **Navigation Server** - Haven't tested it, but the terrain does provide full lod0 collision, so baking should work.
+* **Godot Physics** - Godot Physics Works within regions you define in your world. No collision outside of those.
+* **Jolt Physics** - Won't work until either Jolt supports [non-power of 2 heightmap shapes](https://github.com/godot-jolt/godot-jolt/issues/502), or we generate physics meshes. See [#152](https://github.com/outobugi/Terrain3D/discussions/152). 
+* **Navigation Server** - Heard from a user that it crashed. The terrain does provide full lod0 collision, so baking should work maybe after a bug fix.
 * **Occlusion** - Haven't tested it. At the least you can use manual shapes.
 * **SDGFI** - Seems to work fine.
 * **Lightmap baking** - There is no a static mesh, nor UV2 channel to bake lightmaps onto. So no lightmap baking.
