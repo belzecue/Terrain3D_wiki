@@ -34,31 +34,31 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 * Undo/Redo
 * [Import/Export data](Importing-&-Exporting-Data)
 
+| Feature | Status | 
+| ------------- | ------------- | 
+| **Platforms** | Works on Windows, Linux, OSX. Android [pending](https://github.com/outobugi/Terrain3D/issues/137)
+| Running through the editor | Works
+| Exported games | Works
+| **Data** |
+| Large terrains | 8k x 8k works, maybe a little more. 16k x 8k and higher works in memory, but cannot be saved due to an [engine bug](https://github.com/outobugi/Terrain3D/issues/159).
+| Importing / Exporting | Works. See [Importing data](Importing-&-Exporting-Data)
+| Double precision floats | [Probable](https://github.com/outobugi/Terrain3D/issues/30)
+| **Rendering** |
+| Frustum Culling | The terrain is made up of several meshes, so half can be culled if the camera is on the ground.
+| Occlusion Culling | Untested. At the least you can use manual shapes.
+| SDGFI | Seems to work fine.
+| Lightmap baking | Not possible. There is no a static mesh, nor UV2 channel to bake lightmaps onto.
+| **Physics** |
+| Godot | Works within regions you define in your world. No collision outside of those.
+| Jolt | Pending support from Jolt. See [#152](https://github.com/outobugi/Terrain3D/discussions/152).
+| **Navigation Server** | Untested. Heard one report that it crashed. The terrain does provide full lod0 collision, so baking should work maybe after a bug fix.
+| **Environment** |
+| Foliage | [Pending](https://github.com/outobugi/Terrain3D/issues/43). Non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader working, your own particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
+| Object placement | [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). For placing objects with collision, use [Scatter](https://github.com/HungryProton/scatter). We provide [a script](https://github.com/outobugi/Terrain3D/blob/main/project/addons/terrain_3d/extras/project_on_terrain3d.gd) that allows Scatter to detect our terrain.
+| Holes | Visual holes [pending](https://github.com/outobugi/Terrain3D/issues/60). Collision holes unlikely, but we'll provide instructions for allowing a player to pass through the collision.
+| Advanced texturing techniques | Pending. eg. Paintable uv scale / slope / rotation, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [System Design](System-Design))
+| Non-destructive layers | Used for things like river beds, roads or paths that follow a curve and tweak the terrain. It's [possible](https://github.com/outobugi/Terrain3D/issues/129), but low priority.
+| Water | Out of scope. Use [WaterWays](https://github.com/Arnklit/Waterways) for rivers, or [Realistic Water Shader](https://godotengine.org/asset-library/asset/343) for lakes.
 
-### Interaction With Godot Modules
-* **Platforms** - Works on Windows, Linux, OSX. Even one successful report on Android (Samsung galaxy tab, but there's a [shader issue](https://github.com/outobugi/Terrain3D/issues/137))
-* **Running the game from the editor** - Works
-* **Exported games** - Works
-* **Godot Physics** - Godot Physics Works within regions you define in your world. No collision outside of those.
-* **Jolt Physics** - Won't work until either Jolt supports [non-power of 2 heightmap shapes](https://github.com/godot-jolt/godot-jolt/issues/502), or we generate physics meshes. See [#152](https://github.com/outobugi/Terrain3D/discussions/152). 
-* **Navigation Server** - Heard from a user that it crashed. The terrain does provide full lod0 collision, so baking should work maybe after a bug fix.
-* **Occlusion** - Haven't tested it. At the least you can use manual shapes.
-* **SDGFI** - Seems to work fine.
-* **Lightmap baking** - There is no a static mesh, nor UV2 channel to bake lightmaps onto. So no lightmap baking.
 
-### Interaction With 3rd Party Tools
-* **Heightmaps** from Unity, WorldMachine, Unreal and other tools, see [Importing data](Importing-&-Exporting-Data)
-* **Hungry Proton's [Scatter](https://github.com/HungryProton/scatter)** - we provide [a script](https://github.com/outobugi/Terrain3D/blob/main/project/addons/terrain_3d/extras/project_on_terrain3d.gd) you can use to place objects on the terrain
-
-### Possible Future Features
-
-See our [roadmap](https://github.com/users/outobugi/projects/1/views/1) for details and priority, and [Contributing](Contributing) if you'd like to help out.
-
-* **Double precision floats** - [Probable](https://github.com/outobugi/Terrain3D/issues/30)
-* **Advanced texturing techniques** - eg. Paintable uv scale / slope / rotation, 2-layer texture blending, 3D projection. We intend to implement all of these and adopt techniques provided by The Witcher 3 team. (See [System Design](System-Design))
-* **Foliage** - [It's on the list](https://github.com/outobugi/Terrain3D/issues/43). Non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader working, your own particle shader, or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
-* **Holes** - Visual is likely. Collision is less likely, but there's a trick to allow a player to pass through the collision. [See #60](https://github.com/outobugi/Terrain3D/issues/60)
-* **Non-destructive layers** - Used for things like river beds, roads or paths that follow a curve and tweak the terrain. It's possible, but very low priority. 
-* **Object placement** - For objects with collision. [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). Use [Scatter](https://github.com/HungryProton/scatter).
-* **Water** - Out of scope. Use [WaterWays](https://github.com/Arnklit/Waterways) for rivers, or [Realistic Water Shader](https://godotengine.org/asset-library/asset/343) for lakes.
-
+See our [roadmap](https://github.com/users/outobugi/projects/1/views/1) for more details and priority, and [Contributing](Contributing) if you'd like to help out.
