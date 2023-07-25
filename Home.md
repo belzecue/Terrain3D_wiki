@@ -40,7 +40,7 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 | Running through the editor | Works
 | Exported games | Works
 | **Data** |
-| Large terrains | 8k x 8k works, maybe a little more. 16k x 8k and higher works in memory, but cannot be saved due to an [engine bug](https://github.com/outobugi/Terrain3D/issues/159).
+| Large terrains | 8k^2 works, maybe a little more. 16k x 8k up to 16k^2 works in memory, but cannot be saved due to an [engine bug](https://github.com/outobugi/Terrain3D/issues/159).
 | Importing / Exporting | Works. See [Importing data](Importing-&-Exporting-Data)
 | Double precision floats | [Probable](https://github.com/outobugi/Terrain3D/issues/30)
 | **Rendering** |
