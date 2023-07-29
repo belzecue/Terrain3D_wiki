@@ -28,6 +28,12 @@ If that doesn't work, most likely the library version does not match the engine 
 
 If the demo scene does work, you have an issue in your project. It could be a setting or file given to Terrain3D, or it could be anywhere else in your project. Divide and conquer. Copy your project and start ripping things out until you find the cause.
 
+#### Exported Game Crashes On Startup
+
+First make sure your game works running in the editor. Then ensure it works as a debug export with the console open. If there are challenges, you can enable [Terrain3D debugging](#debug-logs) before exporting with debug so you can see activity. Only then, test in release mode. 
+
+Make sure you've built Terrain3D in [both debug and release mode](Building-From-Source#5-build-the-extension) and that upon export you have both libraries in the export directory (eg. `libterrain.windows.debug.x86_64.dll` and `libterrain.windows.release.x86_64.dll`). If you don't have these libraries, your game will close instantly upon startup.
+
 
 ### Importing Textures
 
