@@ -1,4 +1,4 @@
-Currently importing and exporting is possible via code or our demo. We will [make a UI](https://github.com/outobugi/GDExtensionTerrain/issues/81)  eventually. In the meantime, we have written a script that uses the Godot Inspector as a makeshift UI. You can use it to make a data file for your other scenes.
+Currently importing and exporting is possible via code or our demo. We will [make a UI](https://github.com/outobugi/Terrain3D/issues/81)  eventually. In the meantime, we have written a script that uses the Godot Inspector as a makeshift UI. You can use it to make a data file for your other scenes.
 
 ## Importing Data
 
@@ -19,7 +19,7 @@ Notes:
 
 5) Specify any desired height offset or scale. The scale gets applied first. (eg. 100, -100 would scale the terrain by 100, then lower the whole terrain by 100).
 
-Note that we store full range values. If you sculpt a hill to a height of 50, that's what goes into the data file. Your heightmap values may be normalized to the range of 0-1. If you import and it's not visible, try scaling the height up by 300-500.
+* Note that we store full range values. If you sculpt a hill to a height of 50, that's what goes into the data file. Your heightmap values (esp w/ EXR) may be normalized to the range of 0-1. If you import and it's not visible, try scaling the height up by 300-500.
 
 6) If you have a RAW or R16 file (same thing, different extension), make sure it is named `.r16`. You can specify the height range and dimensions next. These are not stored in the file so you must know them. I prefer to place them in the filename.
 
@@ -40,7 +40,9 @@ We can import any supported image format Godot can read into any of the map type
 * [Image formats stored in a Godot resource file](https://docs.godotengine.org/en/4.0/classes/class_image.html#enum-image-format): `tres`, `res`
 * R16 Height map aka RAW: For 16-bit heightmaps read/writable by World Machine, Unity, Krita, Photoshop, etc. Rename the extension to `r16`. Min/Max heights and image size are not stored in the file, so you must keep track of them elsewhere (such as in the name)
 
-Only `exr` or `r16` (aka raw) are recommended for heightmaps. Godot PNG only supports 8-bit per channel, so don't use it for heightmaps. It is fine for external editing of control and color maps which are RGBA. See [Terrain3DStorage](https://github.com/outobugi/GDExtensionTerrain/wiki/Terrain3DStorage#internal-data-storage) for details on internal storage.
+Only `exr` or `r16` (aka raw) are recommended for heightmaps. Godot PNG only supports 8-bit per channel, so don't use it for heightmaps. It is fine for external editing of control and color maps which are RGBA. See [Terrain3DStorage](Terrain3DStorage#internal-data-storage) for details on internal storage.
+
+[Zylann's HTerrain](https://github.com/Zylann/godot_heightmap_plugin/) stores data in a `res` file which we can import directly. No need to export it, but his tool also exports `exr` and `r16`.
 
 Upon import, you can specify the location of import on the greater 16k^2 world. e.g. You could import multiple maps as separate or combined islands.
 
@@ -75,7 +77,7 @@ For heightmaps, use `exr` or `r16` (aka raw) for external tools, or `res` for Go
 
 For color or control maps, use `png`, `tga` or another lossless rgba format. External tools can edit these. `res` for Godot only use.
 
-Control maps can be edited in a paint application, but the data is proprietary to this tool and won't be understood by any other. See [Terrain3DStorage](https://github.com/outobugi/GDExtensionTerrain/wiki/Terrain3DStorage#internal-data-storage).
+Control maps can be edited in a paint application, but the data is proprietary to this tool and won't be understood by any other. See [Terrain3DStorage](Terrain3DStorage#internal-data-storage).
 
 The exporter takes the smallest rectangle that will fit around all active regions in the 16k^2 world and export that as an image. So, if you have a 1k x 1k island in the NW corner, and a 2k x 3k island in the center, with a 1k strait between them, the resulting export image will be something like 4k x 5k. You'll need to specify the location (rounded to `region_size`) when reimporting to have a perfect round trip.
 
