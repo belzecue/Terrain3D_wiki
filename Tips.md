@@ -1,3 +1,7 @@
+# General
+
+* Always run Godot with the [console](Troubleshooting#debug-logs) open.
+
 # Painting
 
 * Right-click any surface to bring it into edit mode.
