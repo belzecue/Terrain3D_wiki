@@ -77,13 +77,17 @@ Notes:
 We can export raw plus any supported image format Godot can write. These include:
 * [Image save functions for external files](https://docs.godotengine.org/en/4.0/classes/class_image.html): `exr`, `png`, `jpg`, `webp`
 * Images stored in a Godot resource file: `tres` for text, `res` for binary (with `ResourceSaver::FLAG_COMPRESS` enabled)
-* R16 Height map aka RAW: For 16-bit heightmaps read/writable by World Machine, Unity, Krita, Photoshop, etc. Save with the extension `r16`. Min/Max heights and image size are not stored in the file, so you must keep track of them elsewhere. They are listed in the tool (see below).
+* R16 Height map aka RAW: For 16-bit heightmaps read/writable by World Machine, Unity, Krita, Photoshop, etc. Save with the extension `r16`. Min/Max heights and image size are not stored in the file, so you must keep track of them elsewhere. See below to acquire the dimensions.
 
 For heightmaps, use `exr` or `r16` (aka raw) for external tools, or `res` for Godot only use. Godot PNG only supports 8-bit per channel, so it will give you blocky heightmaps.
 
 For color or control maps, use `png` or `webp`, as they are lossless rgba formats that external tools can edit. Use `res` for Godot only use.
 
 Control maps can be edited in a paint application, but the data is proprietary to this tool and won't be understood by any other. See [Terrain3DStorage](Terrain3DStorage#internal-data-storage).
+
+**Exported Image Dimensions**
+
+Upon export, the console reports the image size.
 
 You can get the height of the data by clicking `Update Height Range`, then looking in the read only data of the storage file.
 
