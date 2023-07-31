@@ -1,6 +1,6 @@
 # Painting
 
-* Right-click any surface to bring it into edit more.
+* Right-click any surface to bring it into edit mode.
 * Middle-click any surface to clear/delete it. You can only delete the last surface in the list.
 
 
