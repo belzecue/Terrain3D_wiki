@@ -15,7 +15,7 @@ Currently importing and exporting is possible via code or our demo. We will [mak
 Notes:
 * You can import multiple times into the larger world map by specifying different locations.
 * You can also reimport to the same location to overwrite anything there. 
-* Each time you import, it will overwrite the height, control and color for the section you imported. Even if you specify only the heightmap and leave control/color blank, it will erase any control/color data in that region. (will be separated later)
+* Each time you import, it will overwrite the height, control and color for the section you imported. Even if you specify only the heightmap and leave control/color blank, it will erase any control/color data in that region. ([will be separated later](https://github.com/outobugi/Terrain3D/issues/130))
 
 5) Specify any desired height offset or scale. The scale gets applied first. (eg. 100, -100 would scale the terrain by 100, then lower the whole terrain by 100).
 
