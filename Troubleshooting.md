@@ -2,7 +2,9 @@
 
 ## Debug Logs
 
-Terrain3D has debugging logs for everything. Make sure you're running Godot with the console open (you ran `Godot_v4.*_console.exe`). In the Terrain3D node, set debug_level to `debug`. 
+Terrain3D has debug logs for everything. It dumps logs to the Godot console, and *may* be saved to the running logs.
+
+As a gamedev, you should always be running with the console open (i.e. you ran `Godot_v4.*_console.exe`). The entire engine dumps errors there, while the output window within Godot is slow and will skip lines if it gets busy. If you set `Terrain3D.debug_level` to `info` or `debug`, you'll get copious logs of activity that will help you troubleshoot problems. 
 
 To get help on anything you can't solve yourself, attach a full logs from your console or file system. As long as Godot doesn't crash, it saves the log files on your drive. In Godot select, `Editor, Open Editor Data/Settings Menu`. On windows this opens `%appdata%\Godot` eg(`C:\Users\%username%\AppData\Roaming\Godot`). Look under `app_userdata\<your_project_name>\logs`. Otherwise you can copy and paste from the console window.
 
