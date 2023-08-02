@@ -57,8 +57,10 @@ Terrain3D provides users non-contiguous 1024x1024 sized regions on a 16x16 regio
 
 If you run a raycast outside of the regions, it won't hit anything.
 
-If you query `get_height()` it will return 0.
+If you query `get_height()` outside of regions, it will return 0.
 
-You can determine if a given location is within a region by using `var region_index: int = Terrain3DStorage.get_region_index(global_location)`. It will return -1 if the XZ location is not within a region. Y is ignored.
+You can determine if a given location is within a region by using this function. It will return -1 if the XZ location is not within a region. Y is ignored.
 
-
+```
+var region_index: int = Terrain3DStorage.get_region_index(global_location)
+```
