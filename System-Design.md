@@ -16,3 +16,7 @@ This system does not paint directly on `Textures` using the GPU. It paints on [I
 
 Painting on the GPU is possible later, but there are [some things](https://github.com/godotengine/godot/pull/80164), and [other things](https://github.com/godotengine/godot/issues/54122), and [more things](https://github.com/godotengine/godot-proposals/issues/6989) that need to be supported in Godot 4 before this is feasible.
 
+Bastian Olij's [demo and changes to the renderer](https://github.com/godotengine/godot-demo-projects/pull/938) may provide a path to GPU painting. 
+
+
+Or Juan's [proposal on drawable textures](https://github.com/godotengine/godot-proposals/issues/7379). 
