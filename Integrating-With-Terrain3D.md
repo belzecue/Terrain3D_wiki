@@ -5,10 +5,11 @@ This page is for tool & plugin developers and more advanced gamedevs who want to
 
 * If collision is enabled in game (default) or in the editor (debug only), you can run a raycast and if it hits, it will return a `Terrain3D` object. See more below in the raycast section.
 
-* To determine if Terrain3D is installed and active, [ask Godot](https://docs.godotengine.org/en/stable/classes/class_editorinterface.html#class-editorinterface-method-is-plugin-enabled):
+* To determine if Terrain3D is installed and active, [ask Godot](https://docs.godotengine.org/en/stable/classes/class_editorinterface.html#class-editorinterface-method-is-plugin-enabled). (Note this works only after [this commit](af2c8eb3b56b5485e32a6fcbcd7a2d8b4d0f96c1 ))
+
 ```
      var ei: EditorInterface = EditorScript.new().get_editor_interface()
-     ei.is_plugin_enabled("Terrain3D")
+     print("Terrain3D installed: ", ei.is_plugin_enabled("terrain_3d"))
 ```
 
 * Your script can provide a NodePath and allow the user to select their Terrain3D node as was done in [the script](https://github.com/outobugi/Terrain3D/blob/df901b4fd51a81175e4f5177c33318a8a4b19c36/project/addons/terrain_3d/extras/project_on_terrain3d.gd#L13) provided for use with Scatter.
