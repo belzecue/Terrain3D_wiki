@@ -13,10 +13,16 @@ This page is for tool & plugin developers and more advanced gamedevs who want to
 
 * Your script can provide a NodePath and allow the user to select their Terrain3D node as was done in [the script](https://github.com/outobugi/Terrain3D/blob/df901b4fd51a81175e4f5177c33318a8a4b19c36/project/addons/terrain_3d/extras/project_on_terrain3d.gd#L13) provided for use with Scatter.
 
-
-* Or you can search the current scene tree for [nodes of type](https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-find-children) "Terrain3D".
+* You can search the current scene tree for [nodes of type](https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-find-children) "Terrain3D".
 ```
-     get_tree().get_edited_scene_root().find_children("*", "Terrain3D")
+     var terrain
+     if Engine.is_editor_hint(): 
+          # In editor
+          terrain = get_tree().get_edited_scene_root().find_children("*", "Terrain3D")
+     else:
+          # In game
+          terrain = get_tree().get_current_scene().find_children("*", "Terrain3D")
+
 ```
 
 
