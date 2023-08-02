@@ -16,12 +16,12 @@
 
 * **Remove the mesh outside of regions** - You can hide the terrain outside of your active regions by modifying the override shader. All of these options work on an NVidia card, you only need one:
 ```
-vertex() {
-    // after the UV2 calculation
-    if(get_regionf(UV2).z < 0.) {
-        VERTEX.x=0./0.;
-        //VERTEX=vec3(0./0.);
-        //VERTEX=vec3(sqrt(-1));
+    vertex() {
+        // after the UV2 calculation
+        if(get_regionf(UV2).z < 0.) {
+            VERTEX.x=0./0.;
+            //VERTEX=vec3(0./0.);
+            //VERTEX=vec3(sqrt(-1));
+        }
     }
-}
 ```
