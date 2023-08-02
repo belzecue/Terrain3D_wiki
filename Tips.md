@@ -1,6 +1,6 @@
 # General
 
-* Always run Godot with the [console](Troubleshooting#debug-logs) open.
+* Always run Godot with the [console](Troubleshooting#debug-logs) open so you can see errors and messages from the engine. The output panel is slow and inadequate.
 
 # Painting
 
