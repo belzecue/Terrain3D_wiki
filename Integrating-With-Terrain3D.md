@@ -45,7 +45,7 @@ This will generate collision in the editor. There is no collision outside of reg
 The much more optimal way to detect height is to just ask the Terrain3DStorage for the height directly:
 
 ```
-     var height: float = terrain_node.storage.get_height(global_location)
+     var height: float = terrain.storage.get_height(global_location)
 ```
 
 This is ideal for one lookup. However, if you wish to look up thousands of heights, it will be significantly faster if you retrieve the heightmap Image for the region and query it directly.
