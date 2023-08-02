@@ -1,8 +1,9 @@
-This page is primarily for other tool & plugin developers, but may be useful for more advanced gamedevs.
+This page is for tool & plugin developers and more advanced gamedevs who want to know how best to integrate their other systems with Terrain3D.
+
 
 ## Detecting Terrain3D
 
-* If collision is enabled in game (default) or in the editor (debug only), you can run a raycast and if it hits it will return a `Terrain3D` object. See more below in the raycast section.
+* If collision is enabled in game (default) or in the editor (debug only), you can run a raycast and if it hits, it will return a `Terrain3D` object. See more below in the raycast section.
 
 * To determine if Terrain3D is installed and active, [ask Godot](https://docs.godotengine.org/en/stable/classes/class_editorinterface.html#class-editorinterface-method-is-plugin-enabled):
 ```
