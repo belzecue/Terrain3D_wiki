@@ -1,4 +1,4 @@
-This page is primarily for other tool & plugin developers.
+This page is primarily for other tool & plugin developers, but may be useful for more advanced gamedevs.
 
 ## Detecting Terrain3D
 
