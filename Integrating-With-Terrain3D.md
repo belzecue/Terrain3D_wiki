@@ -24,6 +24,8 @@ This page is for tool & plugin developers and more advanced gamedevs who want to
           # In game
           terrain = get_tree().get_current_scene().find_children("*", "Terrain3D")
 
+     if terrain:
+          print("Found terrain")
 ```
 
 
