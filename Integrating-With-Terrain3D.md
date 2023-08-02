@@ -5,7 +5,7 @@ This page is for tool & plugin developers and more advanced gamedevs who want to
 
 * If collision is enabled in game (default) or in the editor (debug only), you can run a raycast and if it hits, it will return a `Terrain3D` object. See more below in the raycast section.
 
-* To determine if Terrain3D is installed and active, [ask Godot](https://docs.godotengine.org/en/stable/classes/class_editorinterface.html#class-editorinterface-method-is-plugin-enabled). (Note this works only after [this commit](af2c8eb3b56b5485e32a6fcbcd7a2d8b4d0f96c1 ))
+* To determine if Terrain3D is installed and active, [ask Godot](https://docs.godotengine.org/en/stable/classes/class_editorinterface.html#class-editorinterface-method-is-plugin-enabled). (Note this works only after [this commit](https://github.com/outobugi/Terrain3D/commit/af2c8eb3b56b5485e32a6fcbcd7a2d8b4d0f96c1))
 
 ```
      var ei: EditorInterface = EditorScript.new().get_editor_interface()
