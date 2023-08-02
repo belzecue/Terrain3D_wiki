@@ -16,7 +16,7 @@ This page is for tool & plugin developers and more advanced gamedevs who want to
 
 * You can search the current scene tree for [nodes of type](https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-find-children) "Terrain3D".
 ```
-     var terrain
+     var terrain: Terrain3D # or Node if you aren't sure if it's installed
      if Engine.is_editor_hint(): 
           # In editor
           terrain = get_tree().get_edited_scene_root().find_children("*", "Terrain3D")
