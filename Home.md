@@ -51,7 +51,7 @@ For all other known issues not on this list, see [Issues](https://github.com/out
 | **Physics** |
 | Godot | Works within regions you define in your world. No collision outside of those.
 | Jolt | Pending support from Jolt. See [#152](https://github.com/outobugi/Terrain3D/discussions/152).
-| **Navigation Server** | Untested. Heard one report that it crashed. The terrain does provide full lod0 collision, so baking should work maybe after a bug fix.
+| **Navigation Server** | Pending. See [#46](https://github.com/outobugi/Terrain3D/issues/46).
 | **Environment** |
 | Foliage | [Pending](https://github.com/outobugi/Terrain3D/issues/43). Non-collision based, paintable meshes (rocks, grass) will likely be added as a particle shader. Alternatives are [Scatter](https://github.com/HungryProton/scatter) once he has his particle shader working, your own particle shader, [Simple Grass Painter](https://godotengine.org/asset-library/asset/1623) (add as a child and enable debug collision) or [MultiMeshInstance3D](https://docs.godotengine.org/en/stable/tutorials/3d/using_multi_mesh_instance.html)
 | Object placement | [Out of scope](https://github.com/outobugi/Terrain3D/issues/47). For placing objects with collision, use [Scatter](https://github.com/HungryProton/scatter). We provide [a script](https://github.com/outobugi/Terrain3D/blob/main/project/addons/terrain_3d/extras/project_on_terrain3d.gd) that allows Scatter to detect our terrain.
