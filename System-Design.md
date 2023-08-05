@@ -14,11 +14,4 @@ Like The Witcher 3, this system uses a geometry clipmap, where the mesh componen
 
 This system does not paint directly on `Textures` using the GPU. It paints on [Images](https://docs.godotengine.org/en/stable/classes/class_image.html) using the CPU, which are then transferred to the GPU as textures. It's not ideal, but processing in C++ is reasonably fast. We have a hard brush size limit of 200 as larger is too sluggish.
 
-Painting on the GPU is possible later, but there are [some things](https://github.com/godotengine/godot/pull/80164), and [other things](https://github.com/godotengine/godot/issues/54122), and [more things](https://github.com/godotengine/godot-proposals/issues/6989) that need to be supported in Godot 4 before this is feasible.
-
-Bastian Olij's [demo and changes to the renderer](https://github.com/godotengine/godot-demo-projects/pull/938) may provide a path to GPU painting. 
-
-
-Or Juan's [proposal on drawable textures](https://github.com/godotengine/godot-proposals/issues/7379). 
-
-GPU Support is being tracked [here](https://github.com/outobugi/Terrain3D/issues/174).
+Painting on the GPU is possible later, but there are some things needed in the engine. GPU Support is being tracked [here](https://github.com/outobugi/Terrain3D/issues/174).
