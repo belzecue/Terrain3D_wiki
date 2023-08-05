@@ -20,3 +20,5 @@ Bastian Olij's [demo and changes to the renderer](https://github.com/godotengine
 
 
 Or Juan's [proposal on drawable textures](https://github.com/godotengine/godot-proposals/issues/7379). 
+
+GPU Support is being tracked [here](https://github.com/outobugi/Terrain3D/issues/174).
